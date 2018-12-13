@@ -1,9 +1,11 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
+const example= () => {
+ 
+
+  return 'example';  //prueba
 };
-//hola no entiendo nada
+
 
 window.example = example;
