@@ -4,6 +4,6 @@
 const example = () => {
   return 'example';
 };
-//hola no entiendo na
+//hola no entiendo nada
 
 window.example = example;
