@@ -1,0 +1,30 @@
+#nameaplication{
+    background: rgb(2, 2, 54) ;
+ 
+
+} 
+h1,h3,p{
+    color: white;
+}
+.navbar{
+    color: rgb(2, 2, 66);
+    width: LaMedidaQueDeseas;
+}
+
+@media (min-width: 700px) { 
+    .navbar{
+            text-align: center;
+           }
+}
+.Selectyear{
+    width: 317px;
+    height: 32px;
+    box-shadow: 0px 0.5px 0 0 #57676f, inset 0px 0.5px 0 0 #ffffff;
+    background-image: linear-gradient(to top, #86949b, #a9b6bd);
+  }
+  .barselect {
+
+    opacity: 0.25;
+    box-shadow: 0px 0.5px 0.5px 0 rgba(0, 0, 0, 0.08);
+    background-color: #142855;
+  }
