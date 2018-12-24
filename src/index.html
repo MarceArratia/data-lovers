@@ -4,17 +4,112 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body onload="llenar()">
+      <!--Creando responsive adaptable a cuelquier dimensión-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+          <a class="navbar-brand btn btn-primary text-white" href="#"><h2>REGTRANS</h2><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png" alt="EEUU"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse btn btn-primary" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="#">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white " href="#">Quiénes somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contáctenos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-white" href="#" >Prevensión</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled text-white" href="#" >Sitios de interés</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+ 
+      </div>
+      <input type="button" value="Click" >
       <script src="./data/injuries/injuries.js"></script> 
-      <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-      <!-- <script src="./data/steam/steam.js"></script> -->
-      <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-      <!-- <script src="./data/lol/lol.js"></script>  hola -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script src="data.js"></script>
       <script src="main.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+  
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Work',     11],
+            ['Eat',      2],
+            ['Commute',  2],
+            ['Watch TV', 2],
+            ['Sleep',    7]
+          ]);
+  
+          var options = {
+            title: 'My Daily Activities'
+          };
+  
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+   <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7]
+      ]);
+
+      var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+
     <div id="root">
-        <input type="button" value="Click" onclick="uno()">
+        <div class="row">
+            <div class="col-sm-9 barselect ">
+                <select id="lista" class="Selectyear">
+                    <option value="sel">Seleccione Año</option>
+                </select>
+        
+            </div>
+            <div class="row">
+                <div class="col-8 col-sm-6">
+                    <div id="piechart" style="width: 600px; height: 400px;"></div>
+
+                </div>
+                <div class="col-4 col-sm-6">
+                    <div id="donutchart" style="width: 600px; height: 400px;"></div>
+
+                </div>
+              </div>
+          </div>
+ 
     </div>
 
   </body>

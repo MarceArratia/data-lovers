@@ -1,3 +1,5 @@
-function uno(){
-    let a=example();
+function year(){
+    let a=Injured_Persons_Year();
+    
+
 }
