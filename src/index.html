@@ -48,11 +48,7 @@
   
           var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Freight_Vessel',     11],
-            ['Train_Accidents_Rail_Roads',      2],
-            ['Water_Vessel_Related',  2],
-            ['Bus_Occupants', 2],
-            ['Motorcyclists',    7]
+            ['Freight_Vessel',     0]
           ]);
   
           var options = {
@@ -72,7 +68,7 @@
         <div class="row">
             <div class="col-sm-9 barselect ">
                 <select id="listYear" class="Selectyear" onChange="filterDataYear()">
-                    <option value="sel">Seleccione Año</option>
+                    <option value="sel">Seleccion año</option>
                 </select>
                 <input type="button" value ="Ir" >
         
@@ -84,6 +80,11 @@
                 </div>
                 <div class="col-4 col-sm-6">
                     <div id="donutchart" style="width: 600px; height: 400px;"></div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 col-sm-6" id ="detalle">
 
                 </div>
               </div>
