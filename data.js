@@ -22,7 +22,7 @@ function fillListYear() {
     //porque +=
     document.getElementById("listYear").innerHTML += "<option value='"+resultYear[i]+"'>"+resultYear[i]+"</option>"; 
   }
-  ranking();
+  
 }
 //filtrado de datos
 function filterDataYear(){
@@ -34,7 +34,9 @@ function filterDataYear(){
     resultDataYear=filterListYearBussines(data,selectYear);
     //crea diseño de gráfico
     graphTransport(resultDataYear);
+    ranking();
 }
+
 //gráficos
 function graphTransport(resultDataYear){
   //sumatoria de totales por medio de transporte
@@ -44,7 +46,6 @@ function graphTransport(resultDataYear){
   let sumRail=0;
   let sumUrban=0;
   let sumOther=0;
-  console.log(resultDataYear);
   //creando filtro para gráficos
   for(let i=0;i<=resultDataYear.length;i++){
 
@@ -102,12 +103,6 @@ function graphTransport(resultDataYear){
 
     }
   }
-  console.log("el total de aire es ",sumAir);
-  console.log("el total de Tren es ",sumTrain);
-  console.log("el total de Agua es ",sumWather);
-  console.log("el total de Carretera es ",sumRail);
-  console.log("el total de Otros es ",sumOther);
-  
   var data=google.visualization.arrayToDataTable(
     [
       ['Medio de Transporte', 'Total'],
@@ -128,9 +123,10 @@ function graphTransport(resultDataYear){
 
 function ranking (){
   let data= INJURIES;
+  let selectYear=document.getElementById("listYear").value;
   let año = [];
   año = data.filter(function(x){
-    return(x.Year.slice(0,4) == 2009);
+    return(x.Year.slice(0,4) == selectYear);
   });
   let dataYear=[];
 dataYear = JSON.stringify(año);
@@ -184,14 +180,37 @@ dataYear[45] = dataYear[45].replace("Total_Injured_Persons_Water","Agua - Person
 dataYear[46] = dataYear[46].replace("Total_Injured_Persons_Water_Not_Related_To_Vessel_Casualties","Agua, no relacionado con las bajas de los buques - Personas accidentadas");
 dataYear[47] = dataYear[47].replace("Total_Injured_Persons_Water_Vessel_Related","Agua, relacionado con buques - Personas accidentadas");
 
-
+//ordenando la información por orden alfabético
 dataYear.sort();
 for (let i=0;i<=dataYear.length;i++){
   let cut = [];
-  cut = String(dataYear[i]).split(":");
+  cut = String(dataYear[i]).split(":"); 
+
   document.getElementById("detalle").innerHTML += "<p>"+cut[0]+"</p>";
 }
-  
+//creando let para separar cifras de mayor a menor como arreglos bidimensional
+let varRanking=[,];
+for (let i = 0;i<=dataYear.length;i++){ 
+  let replaceNull=[];
+  replaceNull = String(dataYear[i]).split(":"); 
+if (replaceNull[1] == "null"){
+  replaceNull[1] = 0;
+}else{
+  replaceNull[1] = parseInt(replaceNull[1]);
+}
+varRanking.push(replaceNull);
+}
+varRanking.sort(function(a,b){
+  return b[1] - a[1];
+});
+console.log(varRanking);
+document.getElementById("top10").innerHTML = "";
+for (let i = 0;i<=10;i++){
+  console.log(varRanking[i][1]);
+  if (varRanking[0,i]!="undefined" && varRanking[i][1]>0){
+    document.getElementById("top10").innerHTML += "<h7>"+varRanking[0,i]+"</h7></br>";
+  }
+}
 
 
 }
