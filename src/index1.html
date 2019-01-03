@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="normalize.css" />
-    <meta name="viewport" content="width=device-width"/>
+   
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
@@ -20,21 +21,13 @@
        <h1>REGTRANS</h1>
 
        <div class="flag">
-          <img src="IMAGENES/bandera.png" alt="bandera">
+          <img src="imagenes/bandera.png" alt="bandera">
         </div> <!--class=bandera-->
 
       <div class="header2">
         <p class="byYear"><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p>
         <p class="byYear2">- Puede efectuar su consulta seleccionando el año de interés, a partir del año 1960<br>
             - Desde 1960 datos presentados cada 5 años. Desde 1990 datos anualizados</p>
-            <div class="col-sm-9 barselect ">
-                <select id="listYear" class="Selectyear" onChange="filterDataYear()">
-                    <option value="sel">Seleccion año</option>
-                </select>
-                <input type="button" value ="Ir" >
-        
-            </div>
-
       </div>
       
       <nav>
@@ -59,20 +52,21 @@
       
       <div class="subtitle">
 
-        <center>
+       
         <div class="info">
         <h2>REGISTRO ESTADÍSTICO DE ACCIDENTES EN MEDIOS DE TRANSPORTE  ·  ESTADOS UNIDOS DE NORTEAMÉRICA</h2>
         </div><!--class=info-->
-        <center>
+        
       
-        <div class="bars">
-           <img src="IMAGENES/bars1.png" alt="bars1">
-        </div>
-         
-        <div class="bars2">
-          <img src="IMAGENES/bars2.png" alt="bars2">
-        </div>
-         
+        
+          <div class="barsLeft">
+           <img  src="imagenes/bars1.png" alt="bars1">
+          </div>
+              
+          <div class="barsRight">
+          <img  src="imagenes/bars2.png" alt="bars2">
+          </div>
+
       </div> <!--class=subtitle-->
      
 
@@ -80,7 +74,7 @@
 
       
 
-      <img src="IMAGENES/cabecera.png" alt="cabecera">
+      <img src="imagenes/cabecera.png" alt="cabecera">
 
     </div>
     </header>
@@ -94,7 +88,7 @@
       </div>
 
       <div class="square2">
-      <p class="graphic2">REGISTROS POR TIPO DE ACCIDENTE</p>      
+      <p class="graphic2">REGISTROS POR TIPOS DE ACCIDENTES</p>      
       </div>
 
     </section>
@@ -107,12 +101,12 @@
      
 
       <div class="net">
-        <a target="_blank" title="Instagram" href="https://www.instagram.com/?hl=es"><img class="instagram" src="IMAGENES/instagram.png" alt="instagram"/></a>
-        <a target="_blank" title="Snapchat" href="https://www.snapchat.com/l/es/"><img class="snapchat" src="IMAGENES/snapchat.png" alt="snapchat"/></a>
-        <a target="_blank" title="Facebook" href="https://es-la.facebook.com/"><img class="facebook" src="IMAGENES/facebook.png" alt="facebook"/></a>
-        <a target="_blank" title="Skype" href="https://www.skype.com/es/"><img class="skype" src="IMAGENES/skype.png" alt="skype"/></a>
-        <a target="_blank" title="Whatsapp" href="https://www.whatsapp.com/"><img class="whatsapp" src="IMAGENES/whatsapp.png" alt="whatsapp"/></a>
-        <a target="_blank" title="Twitter" href="https://twitter.com/iniciarsesion?lang=es"><img class="twitter" src="IMAGENES/twitter.png" alt="twitter"/></a>
+        <a target="_blank" title="Instagram" href="https://www.instagram.com/?hl=es"><img class="instagram" src="imagenes/instagram.png" alt="instagram"/></a>
+        <a target="_blank" title="Snapchat" href="https://www.snapchat.com/l/es/"><img class="snapchat" src="imagenes/snapchat.png" alt="snapchat"/></a>
+        <a target="_blank" title="Facebook" href="https://es-la.facebook.com/"><img class="facebook" src="imagenes/facebook.png" alt="facebook"/></a>
+        <a target="_blank" title="Skype" href="https://www.skype.com/es/"><img class="skype" src="imagenes/skype.png" alt="skype"/></a>
+        <a target="_blank" title="Whatsapp" href="https://www.whatsapp.com/"><img class="whatsapp" src="imagenes/whatsapp.png" alt="whatsapp"/></a>
+        <a target="_blank" title="Twitter" href="https://twitter.com/iniciarsesion?lang=es"><img class="twitter" src="imagenes/twitter.png" alt="twitter"/></a>
         
       </div>
       
@@ -124,12 +118,12 @@
         </div>
 
         <div class="fontLab">                                 
-            <img class="laboratoria" src="IMAGENES/labo.png" alt="laboratoria">    
+            <img class="laboratoria" src="imagenes/labo.png" alt="laboratoria">    
         </div>
 
 
       <div class="foot">
-          <img class="foot" src="IMAGENES/footer.png" alt="footer">
+          <img class="foot" src="imagenes/footer.png" alt="footer">
       </div>
 
     <div class="foot2">
@@ -143,11 +137,18 @@
 
   </div> <!--container-->
 
-   
-  
+    <!--<div id="root"></div>-->
+    <!--<script src="./data/injuries/injuries.js"></script>-->
+    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
+    <!-- <script src="./data/steam/steam.js"></script> -->
+    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+    <!-- <script src="./data/lol/lol.js"></script> -->
+    <!--<script src="data.js"></script>-->
+    <!--<script src="main.js"></script>-->
 
-
-
+    <!--<div id="root">
+            <input type="button" value="Click" onclick="uno()">
+        </div>-->
 
   </body>
 </html>
