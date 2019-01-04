@@ -7,12 +7,11 @@ function fillListYearBussines(data) {
     }
     return arrayYear;
 }
-
+//Función de filtrado por año
 function filterListYearBussines(data,YearA) {
     let resultDataYear=[];
-    resultDataYear=data.filter(function(fil)
-    {
+    resultDataYear=data.filter(function(fil){
         return (fil.Year.slice(0,4)===YearA);
     });
-    return JSON.stringify(resultDataYear).split("Total_Injured_Persons");;
+    return JSON.stringify(resultDataYear).split("Total_Injured_Persons");
 }

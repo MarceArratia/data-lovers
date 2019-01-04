@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+opcionesMenu
 body{
     background-color:#c3c8d4;
 }
@@ -377,3 +378,10 @@ footer{
     z-index: -1;
 }
 
+.table{
+    display: none;
+}
+
+#top10{
+    display: none;
+}
