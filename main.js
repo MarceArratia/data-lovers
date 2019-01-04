@@ -23,10 +23,14 @@ function filterDataYear(){
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);
-    //crea diseño de gráfico
+    //funciones
+    //dibuja gráfico filtrado por año
     graphTransport(resultDataYear);
     graphTransportTwo(resultDataYear);
+    //creando top 10 anual
     ranking();
+    //calculando media
+    half();
 }
 
 //1er gráfico filtro por Medio de Transporte
@@ -172,14 +176,10 @@ function graphTransportTwo(resultDataYear){
       ['Otros', sumOtherTwo],
       
     ]);
-    console.log("Directa ",sumDependence);
-    console.log("InDirecta ",sumIndependence  );
-    console.log("Otros ",sumOtherTwo    );
     var options = {
       title: 'Registro por dependencia con Medio de Transporte',
       pieHole: 0.4,
     };
-    //  var chart = new google.visualization.PieChart(document.getElementById('GraficoDeMarce'));
     var chart = new google.visualization.PieChart(document.getElementById('GraficoDeMarce'));
     chart.draw(dataDos, options);
 }
@@ -248,8 +248,7 @@ dataYear.sort();
 for (let i=0;i<=dataYear.length;i++){
   let cut = [];
   cut = String(dataYear[i]).split(":"); 
-
-  document.getElementById("detalle").innerHTML += "<p>"+cut[0]+"</p>";
+  document.getElementById("order").innerHTML += "<p>"+cut[0]+"</p>";
 }
 //creando let para separar cifras de mayor a menor como arreglos bidimensional
 let varRanking=[,];
@@ -266,26 +265,95 @@ varRanking.push(replaceNull);
 varRanking.sort(function(a,b){
   return b[1] - a[1];
 });
+//Mostrando Ranking de accidentes por año
 document.getElementById("top10").innerHTML = "";
-let table = "<table class='table'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
+let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
 for (let i = 0;i<=10;i++){
   if (varRanking[0,i]!="undefined" && varRanking[i][1]>0){
     varRanking[0,i]= String(varRanking[0,i]).replace("[","");
     varRanking[0,i]= String(varRanking[0,i]).replace("{","");
     varRanking[0,i]= String(varRanking[0,i]).replace('"',"");
-    //varRanking[0,i]= String(varRanking[0,i]).replace(",","  ");
     varRanking[0,i]= String(varRanking[0,i]).replace('"'," ");
     let varSplit = String(varRanking[0,i]).split(",");
-    console.log(varRanking[0][i]);
     table+="   <tr> <th scope='row'>"+i+"</th> <td>"+varSplit[0]+"</td> <td>"+varSplit[1]+"</td> </tr>"
     //th y tr son filas, td son columnas
   }
 }
+//tabla de ranking
 table+="  </tbody> </table>"
 document.getElementById("top10").innerHTML += table;
+}
+//función para calcular la media
+function half(){
+  //rescatar data
+  let data = INJURIES;
+  //suma de los totales numéricos de data
+  let sumHalf = 0;
+  //cuenta cada vez que se suma un número para poder dividir y generar media
+  let count = 0;
+  //dividiendo objeto por años
+  for (let i=0;i<data.length;i++){
+    //crea variable de tipo string
+    let varArray;
+    //JSON.stringify convierte la posición del objeto en un String separado por ","
+    varArray=JSON.stringify(data[i]);
+    console.log(varArray);
+    //se almacena string cortado por ","
+    let position = [];
+    position = varArray.split(",");
+    console.log(position);
+    //divide array en posiciones
+    for (let u=0;u<=position.length;u++){
+      //cortar posicion por ":" con split
+      let positionTwo = [];
+      positionTwo = String(position[u]).split(":");
+      //parseInt pregunta si es entero suma, si no, no hace nada
+      if (parseInt(positionTwo[1])){
+        sumHalf += parseInt(positionTwo[1]);
+        count += 1;
 
+      }
+
+    }
+    
+  }
+  console.log("La Media es " + sumHalf/count);
 }
 
+
+
+
+
+
+
+
+
+/*function media(){
+  const data =INJURIES;
+  let varSum=0;
+  let varAcum=0;
+  for(let i=0;i<data.length;i++){
+    let varAray=[];
+    let varString=JSON.stringify(data[i]);
+    varAray=varString.split(",");
+    console.log(varAray);
+    if(varAray !=null){
+      for(let i=0;i<=varAray.length;i++){
+        let arrayCut=[];
+        arrayCut=String(varAray[i]).split(":");
+        //console.log(arrayCut);
+        if(parseInt(arrayCut[1])){
+          varSum +=parseInt(arrayCut[1]);
+          varAcum +=1;
+        }
+      }
+    }
+
+    
+  }
+console.log("existen "+varAcum+" Elementos");
+console.log("ue suman en total "+varSum);
+}*/
 
 
 
