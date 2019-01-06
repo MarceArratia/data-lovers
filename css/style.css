@@ -13,9 +13,11 @@ body{
 html,body{
     margin: 0%;    
     height:100%;    
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%;
-    font:400 0.1rem/1.8 
+}
+
+.yearList{
+    z-index: 4;
+    position: absolute;
 }
 
 .headF{
@@ -32,6 +34,18 @@ html,body{
 
 }
 
+@media only screen and (min-width:658){
+    .headF .description{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width:657){
+    .headF{
+        font-size: 0.5rem;
+    }
+}
+
 
 
 .bars1 img, .bars2 img{
@@ -40,10 +54,13 @@ html,body{
 }
 
 header{
-    height: 15%;
+    height: 200px;
     width: 100%;
+    box-sizing: border-box;
     
 }
+
+
 .head img{
    
      height: 120px;
@@ -58,13 +75,16 @@ header{
  }
 
  section{
-     height: 75%;
+    height: 300px;
+    
  }
 
+
  .titleHead{   
-     
+    
      color: white;
-margin-left:2%;
+margin-left:0%;
+left: 1%;
 z-index: 4; 
 position: absolute;
 }
@@ -86,7 +106,6 @@ position: absolute;
     height: 80px;
    
      top:103px;
-       
      left: 0;
      right: 0;
      text-align: center;
@@ -99,13 +118,20 @@ position: absolute;
         height: 0.05rem;
     }
 
+    .yearList .btn{
+       
+        height: 30px;
+        font-size: 0.9rem;
+        padding: 1px;
+        width: 70px;
+    }
+
 .graphic{
     margin: auto;
     
     background-color: #a1bfd2;
     height: 18rem;
-    top:150px;
-   
+    top:50px;   
     bottom: 0;
     border: 1px solid #1e3261;
     box-sizing: border-box;
@@ -128,10 +154,15 @@ position: absolute;
 }
 
 .base{
-    border: none;
-    top:350px;
+    display: none;
+    border: 1px solid black;
+    margin:auto;
+    bottom: 0;
+    top:400px;
     height: 14rem;
     width: 100%;
+    box-sizing:border-box;
+    text-align: center;
 }
 
 
@@ -325,4 +356,10 @@ and (min-width : 767px) {
     .iconNav{display:none;
     }
 
+}
+
+@media only screen and (max-width:657){
+    .headF{
+        font-size: 0.5rem;
+    }
 }
