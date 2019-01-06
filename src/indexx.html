@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="fillListYear()">
 
 
 
@@ -22,35 +22,99 @@
    
 
 
-                <div class="row">
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 headBack">
+           <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 headBack">
                 <p><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p>
                 <p class="byYear1">- Puede efectuar su consulta seleccionando el año de interés, a partir del año 1960</p>
-                <p>Desde 1960 datos presentados cada 5 años. Desde 1990 datos anualizados</p></div>
+                <p>Desde 1960 datos presentados cada 5 años. Desde 1990 datos anualizados</p>
+                <div class="col-sm-9 barselect ">
+                    <select id="listYear" class="Selectyear" onChange="filterDataYear()">
+                        <option value="sel">Seleccionar año</option>
+                    </select>
+            <a href="#" data-toggle="modal" data-target="#Ranking">Ranking</a>
+            <a href="#"data-toggle="modal" data-target="#order">Ordenar Alfabéticamente</a>
+            <a href="#">Media</a>
+                </div>
+            </div>
+                
          </div>
-        </div>
 </header>
 
 
 <section class="container-fluid">
         
             <div class="row ">
-                <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
                     <div class="titulo"> 
                         <h5>REGISTRO POR MEDIO DE TRANSPORTE</h5>
+                       
                     </div>
-                    
+                    <div id = "graphTransport">
+
+                    </div>
                 </div>
                 <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
                     <div class="titulo">
                         <h5>REGISTRO POR DEPENDENCIA DE MEDIO DE TRANSPORTE</h5>
                     </div>
+                    <div id = "graphTransportTwo">
+
+                    </div>
                     
                 </div>
             </div>
-        
+    
         </section>
-
+      
+        <div class="modal fade" id="Ranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--modal muestra el ranking top 10 -->
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <!--modal content hace una contenedor-->
+                <div class="modal-content">
+                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitleC">Ranking</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="top10" >
+                              
+                        </div>
+                    </div>
+                    <!--donde esta boton close,class da color al boton y forma-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <!--Despliega orden alfabético-->
+        <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <!--modal-dialog modal muestra el cuadro -->
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <!--modal content hace una contenedor-->
+                    <div class="modal-content">
+                        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitleC">Orden alfabético</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--modal body donde muestra mensaje codificado-->
+                        <div class="modal-body">
+                                <div id="orderList" >
+                                    </div>
+                        </div>
+                        <!--donde esta boton close,class da color al boton y forma-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>       
 <footer>
          <div class="container-fluid">
               <div class="m-0 text-center text-white foot"><img src="imagenes/footer.png" alt="pie"></div>
@@ -68,9 +132,35 @@
                  </div>
                 </div>
 </footer> -->
-
-<script src="js/jquery-3.3.1.slim.min.js"></script>    
+<script src="./data/injuries/injuries.js"></script> 
+<script src="js/jquery-3.3.1.slim.min.js"></script>   
+<script src="data.js"></script>
+<script src="main.js"></script> 
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    //Creación de gráficos
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['a', 'a'],
+        ['Freight_Vessel',     0]
+      ]);
+
+      var options = {
+        title: ' '
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
 </body>
 </html>
