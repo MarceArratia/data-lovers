@@ -5,72 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link rel="stylesheet" href="normalize.css" />
      <link rel="stylesheet" href="css/bootstrap.css">
      <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <title>DataLovers</title>
 </head>
-<body>
+<body class="index">
 
-
+<div class="allContainer h-100%">
 
 <header>
-  <div class="container-fluid">
-             <div class="row">
-                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 head"><h1 class="title">REGTRANS</h1><img src="imagenes/cabecera.png" alt="cabecera"> </div>
-                </div>
-   
+  <div class="container-fluid ">
 
-
-                <div class="row">
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 headBack">
-                <p><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p>
-                <p class="byYear1">- Puede efectuar su consulta seleccionando el año de interés, a partir del año 1960</p>
-                <p>Desde 1960 datos presentados cada 5 años. Desde 1990 datos anualizados</p></div>
-         </div>
-        </div>
-</header>
-
-
-<section class="container-fluid">
-        
-            <div class="row ">
-                <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
-                    <div class="titulo"> 
-                        <h5>REGISTRO POR MEDIO DE TRANSPORTE</h5>
-                    </div>
+        <div class="container-fluid  menuNav">  
+                <nav class="navbar navbar-expand-md float-right ">
+                    <button class="navbar-toogler iconNav" type="button" data-toggle="collapse" data-target="#uno">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
                     
-                </div>
-                <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
-                    <div class="titulo">
-                        <h5>REGISTRO POR DEPENDENCIA DE MEDIO DE TRANSPORTE</h5>
-                    </div>
-                    
-                </div>
+                    <div class="collapse navbar-collapse" id="uno">
+                        <ul class="nav-bar">
+                            <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                            <li class="nav-item"><a target="_blank"  href="http://www.lenguas.unc.edu.ar/uploads/8-Prevencion_Transito.pdf" class="nav-link">Prevención</a></li>
+                            <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop">Sitios de Interés</a>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">Quiénes Somos</a>
+                                            <a target="_blank" href="http://www.cbs.cl/"class="dropdown-item">Bomberos</a>
+                                            <a target="_blank" href="http://www.carabineros.cl/" class="dropdown-item">Carabineros</a>
+                                            <a target="_blank" href="http://www.svs.cl/institucional/mercados/consulta.php?mercado=S&Estado=VI&consulta=CSGEN"class="dropdown-item">Asrguradoras</a>
+                                            <a target="_blank" href="https://www.laboratoria.la/" class="dropdown-item">Laboratoria</a>
+                                        </div>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link">Contáctenos  </a></li>
+                            </ul>
+                        </div>
+                </nav>
             </div>
-        
-        </section>
-
-<footer>
-         <div class="container-fluid">
-              <div class="m-0 text-center text-white foot"><img src="imagenes/footer.png" alt="pie"></div>
-            </div>
-            <!-- /.container -->
-</footer>
 
 
-<!-- <footer class="page-footer font-small cyan darken-3">
+            
     
 
-        <div class="container-fluid">
-                <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 foot"></div>
-                 </div>
-                </div>
-</footer> -->
+            <div class="row clearfix justify-content-between headF">
+                    <span class="col-1 float-left"><p class="bars1"><img src="imagenes/bars1.png" alt="bars1"></p> </span>
+                    <span class="col-10 mx-auto description ">REGISTROS ESTADÍSTICOS DE ACCIDENTES EN MEDIOS DE TRANSPORTE - ESTADOS UNIDOS DE NORTEAMÉRICA </span>
+                    <span class="col-1 float-right "><p class="bars2"><img src="imagenes/bars2.png" alt="bars2"> </span>
+                   </div>
+    
+                
+    
+                 <div class="row">
+                        <div class="row clearfix justify-content-between flag"> 
+                                <span class="col-1 "><p><img src="imagenes/bandera.png" alt="bandera"></p></span>
+                                <span>  <h1 class=" col-1 col-md-2 float-left titleHead">REGTRANS</h1></span>
+                        </div>                  
+                       <span class="col-12  head"><img src="imagenes/cabecera.png" alt="cabecera"> </span>
+                    </div>
+       
+                
+                    
+    
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
+                    <div><p class=" small byYear"><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p></div>
+                    <div class=" byYear1"> <p class="small">-Desde 1960 datos presentados cada 5 años. -Desde 1990 datos anualizados</p></div>
+                     
+                    <div class="yearList">
+                            <button type="button" class="btn btn-dark;'" id="year">AÑOS</button>
+                    </div> 
 
-<script src="js/jquery-3.3.1.slim.min.js"></script>    
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
+                            <div><p class="small byYear"><strong>REPORTES DE INFORMACIÓN:</strong></p></div>
+                           <div class=" byYear1"> <p class=" small">Puede efectuar la consulta seleccionando el tipo de registro requerido</p></div>
+                    </div>
+                    </div>
+                    
+             
+    
+    
+                </div>
+    </header>
+    
+    
+    <section class="container-fluid" >
+            
+                <div class="row " id="graphics">
+                    <div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                        <div class="titles"> 
+                            <h5>REGISTRO POR MEDIO DE TRANSPORTE</h5>
+                        </div>                    
+                    </div>
+    
+                    <div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                        <div class="titles">
+                            <h5>REGISTRO POR DEPENDENCIA DE MEDIO DE TRANSPORTE</h5>
+                        </div>                    
+                    </div>
+                </div> 
+            
+                <div class="row"container-fluid>
+                        <div class="base" id="base"> hola soy el filtrado de años creado por marce</div>
+                </div>
+    </section>
+    
+    <footer class="page-footer"> 
+     
+            <aside class="social-sharing">
+                    <ul class="menu-social">
+                        <li class="social-item"><a href="https://twitter.com/iniciarsesion?lang=es" target="_blank"><span class="screen-reader-text">Twitter</span></a></li>
+                        <li class="social-item"><a href="https://es-la.facebook.com/" target="_blank"><span class="screen-reader-text">Facebook</span></a></li>
+                        <li class="social-item"><a href="https://www.pinterest.com" target="_blank"><span class="screen-reader-text">Pinterest</span></a></li>
+                        <li class="social-item"><a href="whatsapp://send?text=https://www.whatsapp.com/" data-action="share/whatsapp/share"><span class="screen-reader-text">Whatsapp</span></a></li>
+                        <li class="social-item newsletter small "><span>Copyright © 2018 Lorena De La Riva y Marcela Arratia - Todos los derechos reservados</span></li>        
+                        <li class="social-item labo"><span> <img src="imagenes/labo.png" alt="Laboratoria"> </span></li>
+                    </ul>
+                </aside>
+                
+
+                <img src="" alt="">
+          
+             
+               
+    </footer>
+    
+    
+    
+    </div>
+    <script src="mainn.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>    
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    
+    
+    
