@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <title>DataLovers</title>
 </head>
-<body class="index">
+<body onload="fillListYear()">
 
 <div class="allContainer h-100%">
 
@@ -63,7 +63,7 @@
                                 <span class="col-1 "><p><img src="imagenes/bandera.png" alt="bandera"></p></span>
                                 <span>  <h1 class=" col-1 col-md-2 float-left titleHead">REGTRANS</h1></span>
                         </div>                  
-                       <span class="col-12  head"><img src="imagenes/cabecera.png" alt="cabecera"> </span>
+                     
                     </div>
        
                 
@@ -81,39 +81,138 @@
         <div><p class=" small byYear"><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p></div>
         <div class=" byYear1"> <p class="small">-Desde 1960 datos presentados cada 5 años. -Desde 1990 datos anualizados</p></div>
         
-        <!--<div class="yearList">
-                <button type="button" class="btn btn-dark;'" id="year">AÑOS</button>
-        </div> -->
+  <div class="yearList">
+                                    <select id="listYear"   onChange="filterDataYear()">
+                                            <option value="sel">Seleccionar año</option>
+                                    </select>                                
+                            </div> 
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
+                                    <div><p class="small byYear"><strong>REPORTES DE INFORMACIÓN:</strong></p></div>
+                                   <div > 
+                                        <a href="#" data-toggle="modal" data-target="#Ranking">Ranking</a>
+                                        <a href="#" data-toggle="modal" data-target="#order">Ordenar Alfabéticamente</a>
+                                        <a href="#" data-toggle="modal" data-target="#MediaPop">Cálculo de la Media</a>
+                                   </div>
+                            </div>
+                            </div>
+                        </div>
 
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
-                <div><p class="small byYear"><strong>REPORTES DE INFORMACIÓN:</strong></p></div>
-                <div class=" byYear1"> <p class=" small">Puede efectuar la consulta seleccionando el tipo de registro requerido</p></div>
-        </div>
-        </div>
+
+
+
+
+
     </section>
 
 
-    
-    
-    <section class="container-fluid graphics" >
+    <section class="container-fluid">
+            <div class="row ">
+                <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                    <div class="titulo"> 
+                        <h5>REGISTRO POR MEDIO DE TRANSPORTE</h5>
+                        
+                    </div>
+                    <div id = "graphTransport">
+                            
+                    </div>
+                </div>
+                <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                    <div class="titulo">
+                        <h5>REGISTRO POR DEPENDENCIA DE MEDIO DE TRANSPORTE</h5>
+                    </div>
+                    <div id = "graphTransportTwo">
+                    </div>        
+                </div>
+            </div>
+        </section>  
 
-            
-                <div class="row " id="graphics">
-                    <div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5.5 graphic">
-                        <div class="titles"> 
-                            <h5>REGISTROS POR MEDIO DE TRANSPORTE</h5>
-                        </div>                    
+
+
+
+        
+        <div class="modal fade" id="Ranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--modal muestra el ranking top 10 -->
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <!--modal content hace una contenedor-->
+                <div class="modal-content">
+                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitleC">Ranking</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-    
-                    <div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5.5 graphic">
-                        <div class="titles">
-                            <h5>REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE</h5>
-                        </div>                    
+                    <div class="modal-body">
+                        <div id="top10" >
+                              
+                        </div>
                     </div>
-                </div> 
-            
-    </section>
+                    <!--donde esta boton close,class da color al boton y forma-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <!--Despliega orden alfabético-->
+        <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <!--modal-dialog modal muestra el cuadro -->
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <!--modal content hace una contenedor-->
+                    <div class="modal-content">
+                        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitleC">Orden alfabético</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--modal body donde muestra mensaje codificado-->
+                        <div class="modal-body">
+                            <select>
+                                <option value="a-z">Ordenar A-Z</option>
+                                <option value="z-a">Ordenar Z-A</option>
+                            </select>
+                                <div id="orderList" >
+                                    </div>
+                        </div>
+                        <!--donde esta boton close,class da color al boton y forma-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Despliega orden alfabético-->
+        <div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <!--modal-dialog modal muestra el cuadro -->
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <!--modal content hace una contenedor-->
+                    <div class="modal-content">
+                        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitleC">Cálculo de la Media</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                                <div id="MediaDiv" >
+                                    </div>
+                        </div>
+                        <!--donde esta boton close,class da color al boton y forma-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
+
+
+
+
 
     <section class="about">
         
@@ -182,16 +281,17 @@
              
                
     </footer>
-    
-    
-    
     </div>
-    <script src="mainn.js"></script>
-    <script src="js/jquery-3.3.1.slim.min.js"></script>    
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    </body>
-    </html>
-    
-    
-    
+<script src="./data/injuries/injuries.js"></script> 
+<script src="data.js"></script>
+<script src="main.js"></script> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+ //   google.charts.setOnLoadCallback(graphTransport);
+  </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</body>
+</html>

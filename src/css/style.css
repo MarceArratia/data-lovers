@@ -53,30 +53,20 @@ html,body{
     width:auto;
 }
 
+
 header{
     height: 120px;
     width: 100%;
     box-sizing: border-box;
-    
+    background-image: url("../imagenes/cabecera.png");
+    background-size: 1400px 120px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
-.head img{
-   
-     height: 120px;
-     width: 100%;
-     padding: 0%;
-     margin: 0%;
-     left: 0;
-     right: 0;
-    
-     z-index: 1;
-     position: absolute;
- }
-
 .headsBack{
     height: 160px;
-    
   
  }
 
@@ -268,102 +258,82 @@ position: absolute;
   height: 50px;
   box-sizing: border-box;
 }
-
-
-.copyRight{
+    .copyRight{
     z-index: 3;
     position: abs
-}
-
-
-
-
-nav{
+    }
+    
+    
+    
+    nav{
     background: none;
     background-size: 60px;
     padding: 0;
-     font-size: 0.8rem;
-     object-fit: contain;
-     top:0;
-     left:0;
-     bottom: 0;
-     right: 0;
-     margin-top: 1%;
-     margin-right: 0%;
-     font-family: 'Source Sans Pro', sans-serif;  
-        
- }
- 
- 
- 
- ul, ol{
- list-style: none;
- }
-
- 
-nav >  li{
-    float: left;   
- }
- 
- 
- li{
-    float: left;  
- }
- 
- nav li a{
+    font-size: 0.8rem;
+    object-fit: contain;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    margin-top: 1%;
+    margin-right: 0%;
+    font-family: 'Source Sans Pro', sans-serif; 
+    }
+    ul, ol{
+    list-style: none;
+    }
+    
+    nav > li{
+    float: left; 
+    }
+    li{
+    float: left; 
+    }
+    nav li a{
     background-color: #1e3261;
     object-fit: contain;
     color:#a1bfd2;
     text-decoration: none;
     padding: 8px 12px;
-    display: block;    
-    border-top: 1px solid #2a50e3;  
+    display: block; 
+    border-top: 1px solid #2a50e3; 
+    }
     
- 
- }
-
- 
-nav li a:hover{
+    nav li a:hover{
     background-color: #243350;
-    color: white;    
- }
- 
- nav li ul{
+    color: white; 
+    }
+    nav li ul{
     display:none;
-    position: absolute;  
+    position: absolute; 
     padding: 8px 12px;
-    max-width: 85px;  
+    max-width: 85px; 
     min-width: 85px;
     z-index: 4;
-     position: absolute;
- }
- 
- nav li:hover > ul{
-    display: block;
- }
-
-
- .menuNav{
-    z-index: 4;
     position: absolute;
-    top:0;
-    left:0;
-    bottom: 0;
-    right: 0%;
-
-}
-
-
-/***************************queries***************************/
-@media only screen 
-and (min-width : 767px) {
+    }
+    nav li:hover > ul{
+    display: block;
+    }
+     
+    
+    /***************************queries***************************/
+    @media only screen 
+    and (min-width : 767px) {
     .iconNav{display:none;
     }
-
-}
-
-@media only screen and (max-width:657){
-    .headF{
-        font-size: 0.5rem;
+    
     }
-}
+    
+    @media only screen and (max-width:657){
+    .headF{
+    font-size: 0.5rem;
+    }
+    }
+
+    .modal-dialog {
+        width: 800px;
+        margin: 30px auto;
+    }
+    
+   
