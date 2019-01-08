@@ -13,8 +13,7 @@
    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 </head>
-
-
+<body onload="fillListYear()">
 
 <div class="allContainer h-100%">
 
@@ -74,13 +73,13 @@
                                    <div > 
                                         <a href="#" data-toggle="modal" data-target="#Ranking">Ranking</a>
                                         <a href="#" data-toggle="modal" data-target="#order">Ordenar Alfabéticamente</a>
-                                        <a href="#" data-toggle="modal" data-target="#MediaPop">Media</a>
+                                        <a href="#" data-toggle="modal" data-target="#MediaPop">Cálculo de la Media</a>
                                    </div>
                             </div>
                             </div>
                         </div>
             </header>
-<body onload="fillListYear()">
+
 <section class="container-fluid">
             <div class="row ">
                 <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
@@ -140,6 +139,10 @@
                         </div>
                         <!--modal body donde muestra mensaje codificado-->
                         <div class="modal-body">
+                            <select>
+                                <option value="a-z">Ordenar A-Z</option>
+                                <option value="z-a">Ordenar Z-A</option>
+                            </select>
                                 <div id="orderList" >
                                     </div>
                         </div>
@@ -158,7 +161,7 @@
                     <div class="modal-content">
                         <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitleC">Media</h5>
+                            <h5 class="modal-title" id="exampleModalCenterTitleC">Cálculo de la Media</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
