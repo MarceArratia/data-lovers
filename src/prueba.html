@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <title>Calcular promedio en JavaScript</title>
-</head>
-<body>
-</body>
-<script>
-let vr1 = prompt("Ingrese el primer valor");
-let vr2 = prompt("Ingrese el segundo valor");
-let vr3 = prompt("Ingrese el tercer valor");
-let p = (parseFloat(vr1)+parseFloat(vr2)+parseFloat(vr3))/3;
-alert("Su promedio es: "+p)
-</script>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Años',     '1960',   '1965',      '1970',     '1975',      '1980',     '1985',   '1990' ,  '1991' ,  '1992' ,  '1993' , '1994'],
+          ['1960-1970',  165,      938,         522,          0  ,          0 ,       0  ,      0   ,    0  ,       0 ,      0 ,        0 ],
+          ['1971-1980',   0 ,       0 ,          0,        1100,         455,       700,        0,       0,         0,       0,         0],
+          ['1981-1990',  157,      1167,        587,        807,         397,      623,            0,      0,       0 ,      0,         0],
+          ['1991-2000',  139,      1110,        615,        968,         215,      609.4,      614.6,     623,    569.6,    317,      567],
+          ['2001-2010',  136,      691,         629,        1026,        366,      569.6,      614.6,     623,    379.6,    397,      397],
+          ['2011-2016',  136,      691,         629,        1026,        366,      569.6,      614.6,     623,    509.6,    500,      459]
+        ]);
+
+        var options = {
+          title : 'Cálculo de Media cada diez años', 
+          vAxis: {title: 'Media de Accidentes (Por Décadas)'},
+          hAxis: {title: 'Décadas'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}} 
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>
