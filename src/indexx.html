@@ -139,9 +139,10 @@
                         </div>
                         <!--modal body donde muestra mensaje codificado-->
                         <div class="modal-body">
-                            <select>
-                                <option value="a-z">Ordenar A-Z</option>
-                                <option value="z-a">Ordenar Z-A</option>
+                            <!--creando seleccion de orden alfabetico-->
+                            <select id="orderSelect" onChange= "order()">
+                                <option value="1">Ordenar A-Z</option>
+                                <option value="2">Ordenar Z-A</option>
                             </select>
                                 <div id="orderList" >
                                     </div>
@@ -153,12 +154,12 @@
                     </div>
                 </div>
             </div>
-            <!--Despliega orden alfabético-->
-        <div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--Despliega la media-->
+        <div class="modal fade " id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <!--modal-dialog modal muestra el cuadro -->
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <!--modal content hace una contenedor-->
-                    <div class="modal-content">
+                    <div class="modal-content mediaModal">
                         <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalCenterTitleC">Cálculo de la Media</h5>
@@ -167,11 +168,11 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                                <div id="MediaDiv" >
+                                <div id="MediaDiv" class="MediaDiv" >
                                     </div>
                         </div>
                         <!--donde esta boton close,class da color al boton y forma-->
-                        <div class="modal-footer">
+                        <div class="modal-footer" >
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
