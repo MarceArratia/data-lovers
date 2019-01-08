@@ -301,3 +301,39 @@ function arrayRanking(){
   });
   return varRanking;
 }
+function orderBy(selectOrder){
+        let data= INJURIES;
+    //creando enlase 
+    let selectYear=document.getElementById("listYear").value;    
+    let año = [];
+    año = data.filter(function(x){
+    return(x.Year.slice(0,4) == selectYear);
+    });
+    //reemplazando palabras de inglés al español usando replace
+    let dataYear=[];
+    dataYear = JSON.stringify(año);
+    dataYear = dataYear.split(",");
+    dataYear = traslateReplace(dataYear);
+    let orderClean =[];
+    for (let i=0;i<dataYear.length;i++){
+    let clean =[];
+    clean=dataYear[i].split(":");
+    clean[0]= String(clean[0]).replace("[","");
+    clean[0]= String(clean[0]).replace("{","");
+    clean[0]= String(clean[0]).replace('"',"");
+    clean[0]= String(clean[0]).replace('"'," ");
+    clean[0]= String(clean[0]).replace('Year'," ");
+    if(clean[0] != "Year") 
+    {
+        console.log(clean[0])   
+        orderClean.push(clean[0]);
+    }
+    }
+    if (selectOrder == 1){
+        orderClean.sort();
+    }else{
+       orderClean.sort();
+       orderClean.reverse();
+    }
+    return orderClean;
+}
