@@ -140,15 +140,13 @@ function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
   dataYear = orderBy(orderSelect);//eslint-disable-line
-  let ul="";
-  ul+="<ul class='list-group'>"
+  let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
-    ul+="<li class='list-group-item disabled'>- "+dataYear[i]+"</li>"
- 
+    table+="   <tr> <th scope='row'>"+i+"</th> <td>"+dataYear[i]+"</td></tr>"
   }
-  ul+="</ul>";
-  document.getElementById("orderList").innerHTML += ul;
+  table+="  </tbody> </table>"
+  document.getElementById("orderList").innerHTML += table;
   }
   function graphTransportDecade(resultDataDecade){
     //Gráfico 3 de google chart
