@@ -239,7 +239,13 @@ function order (){
     chart.draw(data, options);
   }
 
-
+//activacion de link "quienes somos" del menu navegacion-inicio
+document.getElementById("aboutUs").addEventListener("click",()=>{
+  document.getElementById("graphics").style.display="none";
+  document.getElementById("headsBack").style.display="none";
+document.getElementById("prevention").style.display="block";
+})  
+//activacion de link "quienes somos" del menu navegacion-fin
 
 
 
