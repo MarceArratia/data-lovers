@@ -214,9 +214,9 @@
                         </div>
                         <!--modal body donde muestra mensaje codificado-->
                         <div class="modal-body">
-                            <select>
-                                <option value="a-z">Ordenar A-Z</option>
-                                <option value="z-a">Ordenar Z-A</option>
+                            <select id="orderSelect" onChange= "order()">
+                                <option value="1">Ordenar A-Z</option>
+                                <option value="2">Ordenar Z-A</option>
                             </select>
                                 <div id="orderList" >
                                     </div>
@@ -228,7 +228,7 @@
                     </div>
                 </div>
             </div>
-            <!--Despliega orden alfabético-->
+            <!--Despliega media-->
         <div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <!--modal-dialog modal muestra el cuadro -->
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
