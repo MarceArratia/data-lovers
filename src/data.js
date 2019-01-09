@@ -1,10 +1,13 @@
 //llenar lista por año
+/*global INJURIES*/ 
+//(declara INJURIES como variable global, según eslint)
+//para trabajarlo en el negocio
 function fillListYearBussines(data) {
   let arrayYear = [];
   for (let i = 0 ; i<data.length ; i++) {
       arrayYear.push(data[i].Year.slice(0,4));
  
-  }
+  } 
   return arrayYear;
 }
 //Función de filtrado por año
@@ -284,7 +287,7 @@ dataYear = dataYear.split(",");
 //ordenando la información por orden alfabético
 dataYear.sort();
 //creando let para separar cifras de mayor a menor como arreglos bidimensional
-let varRanking=[,];
+let varRanking=[];
 for (let i = 0;i<=dataYear.length;i++){ 
   let replaceNull=[];
   replaceNull = String(dataYear[i]).split(":"); 
@@ -325,7 +328,7 @@ function orderBy(selectOrder){
   clean[0]= String(clean[0]).replace('Year'," ");
   if(clean[0] != "Year") 
   {
-      console.log(clean[0])   
+      //console.log(clean[0])   
       orderClean.push(clean[0]);
   }
   }
@@ -337,3 +340,11 @@ function orderBy(selectOrder){
   }
   return orderClean;
 }
+window.orderBy=orderBy;
+window.arrayRanking=arrayRanking;
+window.traslateReplace=traslateReplace;
+window.constructGraphicTwo=constructGraphicTwo;
+window.constructGraphicOne=constructGraphicOne;
+window.halfByDecade=halfByDecade;
+window.filterListYearBussines=filterListYearBussines;
+window.fillListYearBussines=fillListYearBussines;
