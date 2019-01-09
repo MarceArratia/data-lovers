@@ -1,12 +1,14 @@
+global.window=global
+global.chai=require("chai");
 require('../src/data.js');
+require('../src/main.js');
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+describe('main', () => {
+  it('debería ser un objeto', () => {
+
+    assert.equal(typeof order, 'object');
+  
   });
 });
