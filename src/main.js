@@ -174,8 +174,8 @@ function order (){
       ]);
       var options = {
         title : 'Cálculo de Media cada diez años',       
-        width: 800,
-        height: 500,
+        width: 650,
+        height: 400,
         vAxis: {title: 'Décadas'},
         hAxis: {title: 'Media de Accidentes (Por Décadas)'},
         seriesType: 'bars',
@@ -184,6 +184,19 @@ function order (){
       var chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
     chart.draw(data, options);
   }
+  //activacion de link "quienes somos" del menu navegacion-inicio
+
+document.getElementById("aboutUs").addEventListener("click",()=>{
+
+  document.getElementById("graphics").style.display="none";
+  
+  document.getElementById("headsBack").style.display="none";
+  
+  document.getElementById("prevention").style.display="block";
+  
+  }) 
+  
+  //activacion de link "quienes somos" del menu navegacion-fin
 
 
 
