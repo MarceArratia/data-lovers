@@ -259,7 +259,7 @@ dataYear[46] = dataYear[46].replace("Total_Injured_Persons_Water_Not_Related_To_
 dataYear[47] = dataYear[47].replace("Total_Injured_Persons_Water_Vessel_Related","Agua, relacionado con buques - Personas accidentadas");
 return dataYear;
 }
-//arreglo para el ranking
+//arreglo para el ranking 
 function arrayRanking(){  
   //rescatando data  
   let data= INJURIES;

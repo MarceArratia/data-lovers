@@ -174,8 +174,8 @@ function order (){
       ]);
       var options = {
         title : 'Cálculo de Media cada diez años',       
-        width: 800,
-        height: 500,
+        width: 650,
+        height: 400,
         vAxis: {title: 'Décadas'},
         hAxis: {title: 'Media de Accidentes (Por Décadas)'},
         seriesType: 'bars',
