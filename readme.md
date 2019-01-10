@@ -1,5 +1,5 @@
 
-![REGTRANS](imagenes_readme/regtrans.png)
+![REGTRANS](imagenes_readme/reg.png)
 
 # **REGTRANS**
 
@@ -54,10 +54,10 @@ ___
 
 * [5.5. GUÍA TUTORIAL RÁPIDA DE LA PÁGINA](#5.5.-GUÍA-TUTORIAL-RÁPIDA-DE-LA-PÁGINA)
 
-* [6. AUTORÍA](#6.-AUTORÍA)
-
+6. [6. AUTORÍA](#6.-AUTORÍA)
 
 _____________________________
+<br>
 
 ### 1. PLANTEAMIENTO DEL PROBLEMA
 
@@ -123,18 +123,27 @@ Previamente a la elaboración del código, se efectuaron las siguientes fases:
 
 * 5.3.4. TESTEOS DE USABILIDAD
 
+<br>
+
 #### 5.1. PLANIFICACIÓN DEL PROYECTO
-Se efectuó la planificación de actividades utilizando la herramienta web www.trello.com y como soporte se uso el diagrama de pizarra
+Se efectuó la planificación de actividades utilizando la herramienta web www.trello.com y como soporte se usó el diagrama de pizarra
 
-![PlanificaciónTrello](imagenes/trello.jpg)
-link:
+![Planificación](imagenes_readme/trello.png)
+link: https://trello.com/b/eHKj3IZc/data-lovers
 
+<br>
 
 ![Planificación](imagenes_readme/pizarra.jpg)
 
 #### 5.2. HISTORIAS DE USUARIO
 
+Aplicando la información obtenida mediante los testeos de usabilidad, se ha realizado la historia de usarios, habiéndose efectuado todas las modificaciones según las observaciones obtenidas y descritas en los criterios de aceptación.
 
+**ENUNCIADO DE LA HISTORIA**
+![Enunciado](imagenes_readme/enunciados.png)
+
+**CRITERIOS DE ACEPTACIÓN**
+![Criterios](imagenes_readme/criterios.png)
 
 #### 5.3. DISEÑO DE LA INTERFAZ DE USUARIO
 
@@ -148,6 +157,10 @@ Se diseñó el prototipo de alta fidelidad, utilizando la herramienta gráfica "
 
 **PHOTOSHOP**
 
+**PRIMER PROTOTIPO**
+![Prototipo de Alta Fidelidad](imagenes_readme/datalovers.jpg)
+
+**PROTOTIPO FINAL**
 ![Prototipo de Alta Fidelidad](imagenes_readme/datalov.png)
 
 **ZEPLIN**
@@ -189,13 +202,13 @@ Sa han efectuado las entrevistas con usuarios objetivo representativos, en difer
 
 
 ##### 5.3.5. PROCESO DE DISEÑO
-Partiendo del esquema prototipo de alta fidelidad y analizando la historia de usarios, se ha procedido al desarrollo y codificación de la página, teniendo en cuenta los siguientes aspectos:
+Partiendo del esquema prototipo de alta fidelidad y analizando la historia de usuarios, se ha procedido al desarrollo y codificación de la página, teniendo en cuenta los siguientes aspectos:
 * La impresión que debe generar la imagen del diseño, es confiabilidad y seriedad, por lo cual se eligierion colores sobrios (azul oscuro y celeste), y al mismo tiempo por tararse de información netamente numérica, se añadieron los gráficos con colores para que la imagen sea más amena y atractiva.
 * Tipografía Serif, para resaltar los títulos. Tipografía sin Serif, para el contenido general de la página, a fin de permitir una fácil lectura.
 * Se incluyeron listas desplegables para contener todas las opciones de selección, considerando se tiene información extensa.
 * Se cuenta con la barra de navegación superior, para el fácil acceso a las secciones de la página, como a vínculos externos de interés.
-* La visualización de los gráficos ha sido colocada al centro de la página, para que sea de rápida visualización.
-* Se cuentan con reportes de informacion, mediante el acceso de botones, los cuales son cargados en ventanas tipo modal.
+* La ubicación de los gráficos ha sido asignada al centro de la página, para que sea de rápida visualización.
+* Se cuenta con reportes de informacion, mediante el acceso de botones, los cuales son cargados en ventanas tipo modal.
 
 #### 5.4. IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO
 
@@ -205,7 +218,7 @@ Partiendo del esquema prototipo de alta fidelidad y analizando la historia de us
 Se han añadido cuadros de gráficos, usando Google Chart.
 
 ##### 5.4.3. CHECK-LIST
-Según el Check-List asignado en el documento README del proyecto DataLovers, se han cumplido en su totalidad, acorde a la verificación siguiente:
+Según el Check-List asignado en el documento README del proyecto DataLovers, los ítems se han cumplido en su totalidad, acorde a la verificación siguiente:
 
 ✓ Usa VanillaJS.
 
