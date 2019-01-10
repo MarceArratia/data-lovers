@@ -1,4 +1,3 @@
-
 //llenar lista por año
 /*global INJURIES*/ 
 //(declara INJURIES como variable global, según eslint)
