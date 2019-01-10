@@ -157,9 +157,8 @@ Se diseñó el prototipo con animación para simulación de interactividad, util
 link Marvel: https://marvelapp.com/3b8fadd
 
 ##### 5.3.4. PROCESO DE DISEÑO
-Partiendo del esquema prototipo en papel, se ha procedido al desarrollo de la herramienta, basando su diseño en los siguientes aspectos:
-- Ambiente de Oficina. Una herramienta importante dentro del material básico para realizar las labores diarias en el puesto de trabajo inherentes al Área.
-- Colores adecuados que guardan sobriedad, tratando de evitar el tedio que producen colores muy oscuros.
+Partiendo del esquema prototipo de alta fidelidad y analizando la historia de usarios, se ha procedido al desarrollo y codificación de la página, teniendo en cuenta los siguientes aspectos:
+- La impresión que debe generar la imagen del diseño, es confiabilidad y seriedad, por lo cual se eligierion colores sobrios (azul oscuro y celeste), y al mismo tiempo por tararse de información netamente numérica, se añadieron los gráficos con colores para que la imagen sea más amena y atractiva.
 - Tipografía sin Serif, para la fácil lectura. (Solamente se usó letra con Serif para resaltar y contrastar el título.)
 - Se incllulyó una caja de texto grande para el ingreso del mensaje, en razón de que el fin del uso es transmitir, en su mayoría, texto de largo o mediano contenido. 
 - Se incluyeron dos botones de limpiado de contenido ingresado, para facilitar la comodidad del usuario, tratandose de botones independientes, uno para la sección de Texto y otro para la sección del Número que indicará el desplazado el texto al cifrar.
