@@ -8,8 +8,8 @@ function fillListYearBussines(data) {
       arrayYear.push(data[i].Year.slice(0,4));
  
   } 
-  return arrayYear;
-}
+  return arrayYear; 
+} 
 //Función de filtrado por año
 function filterListYearBussines(data,YearA) {
   let resultDataYear=[];

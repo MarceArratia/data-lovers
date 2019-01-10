@@ -4,7 +4,7 @@
 function fillListYear() {
   //constante que trae la información de la base de datos
   const data = INJURIES;
- //arreglo de años 
+ //arreglo de años  
   let resultYear = [];
   resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
@@ -12,7 +12,7 @@ function fillListYear() {
     //porque +=
     document.getElementById("listYear").innerHTML += "<option value='"+resultYear[i]+"'>"+resultYear[i]+"</option>"; 
   }
-}
+} 
 //filtrado de datos , cambiar a data el filter(es un ciclo iterativos, que recorre el arreglo del objeto)
 function filterDataYear(){ //eslint-disable-line                                      
   //año que usuario selecciona
@@ -37,7 +37,7 @@ function graphTransport(resultDataYear){
   let recibeArrayGraphic = [];
   recibeArrayGraphic=constructGraphicOne(resultDataYear);//eslint-disable-line
   //Gráfico 1 de google chart
-  var data=google.visualization.arrayToDataTable(
+  let data=google.visualization.arrayToDataTable(
     [
       ['Medio de Transporte', 'Total'],
       ['Aire',recibeArrayGraphic[0]],
@@ -47,11 +47,11 @@ function graphTransport(resultDataYear){
       ['Urbano', recibeArrayGraphic[4]],
       ['Otros',recibeArrayGraphic[5]],
     ]);
-    var options = {
+    let options = {
       title: '',
       pieHole: 0.4,
     };
-    var chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
+    let chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
   chart.draw(data, options);
 }
 //2do gráfico registro filtrando
@@ -59,7 +59,7 @@ function graphTransportTwo(resultDataYear){
 let recibeArrayGraphicTwo = [];
 recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
   //Gráfico 2 de google chart
-  var dataDos=google.visualization.arrayToDataTable(
+  let dataDos=google.visualization.arrayToDataTable(
     [
       ['Medio de Transporte', 'Total'],
       ['Dependencia Directa',recibeArrayGraphicTwo[0]],
@@ -67,11 +67,13 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
       ['Otros', recibeArrayGraphicTwo[2]],
       
     ]);
-    var options = {
+    let options = {
       title: '',
+      width:250,
+      height:260,
       pieHole: 1,
     };
-    var chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
+    let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
     chart.draw(dataDos, options);
 }
 //ranking por mayor a menor por año
@@ -98,7 +100,7 @@ document.getElementById("top10").innerHTML += table;
 }
 //función para calcular la media
 function half(){
-  //rescatar data
+  //rescatar data 
   let data = INJURIES;
   let arrayHalf=[];
   //suma de los totales numéricos de data
@@ -150,7 +152,7 @@ function order (){
   }
   function graphTransportDecade(resultDataDecade){
     //Gráfico 3 de google chart
-    var data=google.visualization.arrayToDataTable(
+    let data=google.visualization.arrayToDataTable(
       [
         ['Década', 'Media'],
         ['1960-1970',resultDataDecade[0]],
@@ -160,7 +162,7 @@ function order (){
         ['2000-2010',resultDataDecade[4]],
         ['2010-2016',resultDataDecade[5]],
       ]);
-      var options = {
+      let options = {
         title : 'Cálculo de Media cada diez años',       
         width: 650,
         height: 400,
@@ -169,7 +171,7 @@ function order (){
         seriesType: 'bars',
         series: {5: {type: 'line'}} 
       };
-      var chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
+      let chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
     chart.draw(data, options);
   }
   //activacion de link "quienes somos" del menu navegacion-inicio

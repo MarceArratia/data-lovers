@@ -212,8 +212,6 @@ padding: 10px;
     text-align: justify;
 
 }
-
-
 /* pie de pagina - inicio */
     
 
@@ -366,13 +364,13 @@ box-sizing: border-box;
     padding: 8px 12px;
     max-width: 85px; 
     min-width: 85px;
-    z-index: 4;
+    z-index: 4; 
     position: absolute;
     }
     nav li:hover > ul{
     display: block;
     }
-     /* menu navegacion fin*/
+     /* menu navegacion fin*/ 
     
     /***************************queries***************************/
     @media only screen 
@@ -380,11 +378,17 @@ box-sizing: border-box;
     .iconNav{display:none;
     }
     }   
+
+   /*@media only screen 
+    and (min-width : 300 px){*/
     .chart{
         width: 100%;
         min-height: auto;
 
     }
-    .row{
-        margin: 0!important;
+    h2{
+        align-content: center;
     }
+    /*.row{
+        margin: 0!important;
+    }*/
