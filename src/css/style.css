@@ -160,7 +160,7 @@ right: 0;
   color: #a1bfd2;
   text-align: center;
   box-sizing: border-box;
-  font-size: 1.2vw;
+  
 
 }
 
@@ -380,11 +380,11 @@ box-sizing: border-box;
     .iconNav{display:none;
     }
     }   
-    .chart{
+   /* .chart{
         width: 100%;
         min-height: auto;
 
     }
     .row{
         margin: 0!important;
-    }
+    }*/
