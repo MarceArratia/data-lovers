@@ -20,7 +20,7 @@
 <header>
 <div class="container-fluid ">
     <div class="container-fluid  menuNav">  
-        <nav class="navbar navbar-expand-md float-right ">
+        <nav class="navbar navbar-expand-md navbar-light float-right ">
         <button class="navbar-toogler iconNav" type="button" data-toggle="collapse" data-target="#uno">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,14 +43,12 @@
         </div>
         </nav>
     </div>
-    <center>
     <div class="row clearfix headF">
-        <span class="col-12"><p class="bar"><img src="imagenes/bar.png" alt="bar"></p> </span>
+        <p class="bar col-12"><img src="imagenes/bar.png" alt="bar"></p>
     </div>
-    </center> 
     <div class="row">
         <div class="row clearfix flag"> 
-            <span class="col-3  "><p><img src="imagenes/regtrans.png" alt="bandera"></p></span>
+            <p class="col-3"><img src="imagenes/regtrans.png" alt="bandera"></p>
         </div>                  
     </div>
 </div>
@@ -90,12 +88,12 @@
                 <p>Quedamos a su disposición ante cualquier consulta o necesidad de ampliar la información, para lo 
                 cual le agradeceremos contactarse con nostros mediante los medios de comunicación indicados en los 
                 apartados respectivos de esta página.</p>
-                <center><h2>LA PREVENCIÓN DE ACCIDENTES ES RESPONSABILIDAD DE TODOS</h2></center>
+                <h2>LA PREVENCIÓN DE ACCIDENTES ES RESPONSABILIDAD DE TODOS</h2>
             </a>
         </div>
     </div>
 </section>
-<section class="container-fluid headsBack ">       
+<section class="container-fluid headsBack">       
     <div class="row" id="headsBack">
         <div  class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
             <p class="byYear"><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p>
@@ -118,19 +116,19 @@
     </div>
 </section>
 <section class="container-fluid">
-    <div class="row " id="graphics">
+    <div class="row" id="graphics">
         <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
             <div class="titles"> 
             <p><strong>RERGISTROS POR EL MEDIO DE TRANSPORTE</strong></p>
             </div>
-            <div id = "graphTransport" class="chart">        
+            <div id="graphTransport" class="chartGraph">        
             </div>
         </div>
             <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
                 <div class="titles">
                     <p><strong>REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE</strong></p>
                 </div>
-                <div id = "graphTransportTwo" class="chart">
+                <div id="graphTransportTwo" class="chartGraph"><!--Imprimo gráfico  -->
                 </div>        
             </div>
      </div>
@@ -148,7 +146,7 @@
                         </button>
             </div>
             <div class="modal-body">
-                <div id="top10" >
+                <div id="top10" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 </div>
            </div>
             <!--donde esta boton close,class da color al boton y forma-->
@@ -177,7 +175,7 @@
                     <option value="1">Ordenar A-Z</option>
                     <option value="2">Ordenar Z-A</option>
                 </select>
-                <div id="orderList" >
+                <div id="orderList" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 </div>
             </div>
             <!--donde esta boton close,class da color al boton y forma-->
@@ -199,9 +197,9 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div> 
             <div class="modal-body">
-                <div id="MediaDiv" class="chart">
+                <div id="MediaDiv" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 </div>
             </div>
             <!--Boton cerrar de modal cálculo media-->
@@ -211,7 +209,6 @@
         </div>
     </div>
 </div>  
-<section class="base"></section>
 <footer class="page-footer"> 
     <aside class="social-sharing">
          <ul class="menu-social">
@@ -230,10 +227,10 @@
 <script src="main.js"></script> 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
- //   google.charts.setOnLoadCallback(graphTransport);
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+ google.charts.load('current', {'packages':['corechart']});
 </script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </body>
