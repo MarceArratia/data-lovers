@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalize.css" />
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="css/style.css">
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <title>DataLovers</title>
+</head>
+<body onload="fillListYear()">
+
+<div class="allContainer h-100%">
+
+<header>
+<div class="container-fluid ">
+    <div class="container-fluid  menuNav">  
+        <nav class="navbar navbar-expand-md float-right ">
+        <button class="navbar-toogler iconNav" type="button" data-toggle="collapse" data-target="#uno">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="uno">
+            <ul class="nav-bar">
+                <li class="nav-item"><a href="javascript:location.reload()" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a target="_blank"  href="http://www.lenguas.unc.edu.ar/uploads/8-Prevencion_Transito.pdf" class="nav-link">Prevención</a></li>
+                <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop">Sitios de Interés</a>
+                <div class="dropdown-menu">
+                    <a id="aboutUs" href="#aboutUs" class="dropdown-item">Quiénes Somos</a>
+                    <a target="_blank" href="http://www.cbs.cl/" class="dropdown-item">Bomberos</a>
+                    <a target="_blank" href="http://www.carabineros.cl/" class="dropdown-item">Carabineros</a>
+                    <a target="_blank" href="http://www.svs.cl/institucional/mercados/consulta.php?mercado=S&Estado=VI&consulta=CSGEN" class="dropdown-item">Aserguradoras</a>
+                    <a target="_blank" href="https://www.laboratoria.la/" class="dropdown-item">Laboratoria</a>
+                </div>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctenos  </a></li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <center>
+    <div class="row clearfix headF">
+        <span class="col-12"><p class="bar"><img src="imagenes/bar.png" alt="bar"></p> </span>
+    </div>
+    </center> 
+    <div class="row">
+        <div class="row clearfix flag"> 
+            <span class="col-3  "><p><img src="imagenes/regtrans.png" alt="bandera"></p></span>
+        </div>                  
+    </div>
+</div>
+</header>
+<section class="about">
+    <div class="row">
+        <div class="prevention" id="prevention">
+            <a name="aboutUs"><p></p><p>La Página REGTRANS ha sido creada con la finalidad de proporcionar cifras
+                estadísticas de Accidentes en medios de transporte, principalmente para ser analizados en el estudio
+                de prevención de accidentes o, a fin de ser una referencia rápida a los usuarios de la Página.
+                El análisis estadístico proporciona un buen sistema de seguimiento y control de los accidentes,
+                su gravedad mediante cifras comparativas, la forma de producirse, así como la identificación de
+                los medios de transporte con mayor riesgo.</p>
+                <p>Además, la información permite expresar, por medio de cifras, los valores de la accidentabilidad global, 
+                así como marcar objetivos de reducción de la accidentabilidad, realizar una comparativa por tipos de transporte
+                facilitar la obtención de indicadores con el objetivo de  tener una información confiable y oficial en el 
+                análisis de prevención, o para otros fines que correspondan.</p> 
+                <p>En este sentido, las estadísticas oficiales de la Página REGTRANS ofrecen datos estadísticos globales, 
+                pero también cifras de los eventos en accidentes por tipo, por tiempo en años y por dependencia directa 
+                o indirecta del medio de transporte.</p>
+                <p>Se recomienda también la consulta de los reportes de cálculos de cifras estadísticas para el análisis y 
+                generación de conclusiones, con la finalidad de determinar medidas preventivas adecuadas.</p> <p></p>
+                <p><strong>REPORTES POR GRÁFICAS</strong></p>                  
+                <p>Se presentan datos expuestos en gráficos según los siguientes parámetros:</p>
+                <p>- Cifras anualizadas entre 1990 y 2016.</p> 
+                <p>- Filtros por tipos de medios de transporte.</p>
+                <p>- Filtros por dependencia directa o indirecta de los medios de transporte.</p> 
+                <p></p><p><strong>REPORTES SIMPLES</strong></p>
+                <p>Se presentan reportes en formato simple de los siguientes registros:</p>
+                <p>- Listado general de los accidentes contenidos en la página, mismos que han sido considerados para efectuar
+                los distintos gráficos y cálculos, mencionados en el listado anterior.</p>
+                <p>- Cálculo de la Media de las cifras de accidentes.</p>
+                <p>- Ranking de los accidentes más frecuentes, mostrando las diez cifras mayores.</p>  
+                <p>Agradecemos su visita y esperamos que la información presentada sea de utilidad para sus propósitos. 
+                Asimismo, si fuera el caso, manifestamos nuestro reconocimiento a su valiosa labor en pro de la Prevención
+                de Accidentes.</p>
+                <p>Quedamos a su disposición ante cualquier consulta o necesidad de ampliar la información, para lo 
+                cual le agradeceremos contactarse con nostros mediante los medios de comunicación indicados en los 
+                apartados respectivos de esta página.</p>
+                <center><h2>LA PREVENCIÓN DE ACCIDENTES ES RESPONSABILIDAD DE TODOS</h2></center>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="container-fluid headsBack ">       
+    <div class="row" id="headsBack">
+        <div  class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
+            <p class="byYear"><strong>REGISTROS POR AÑO DE ACCIDENTE:</strong></p>
+            <p class="byYear1">-Desde 1960 datos presentados cada 5 años. -Desde 1990 datos anualizados.</p>
+            <div>
+                <select class="col-6 yearList" id="listYear"   onchange="filterDataYear()">
+                    <option value="sel">Seleccionar año:</option>
+                </select>                                
+            </div> 
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 headBack">
+            <p class="byYear"><strong>REPORTES DE INFORMACIÓN:</strong></p>
+            <p class="byYear1">Seleccione el Reporte requerido</p>
+            <div class="calc"> 
+                <a class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 ranking" href="#" data-toggle="modal" data-target="#Ranking">RANKING</a>
+                <a class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2  list" href="#" data-toggle="modal" data-target="#order">LISTA ALFABÉTICA</a>
+                <a class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2   media" href="#" data-toggle="modal" data-target="#MediaPop">CÁLCULO "MEDIA"</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
+    <div class="row " id="graphics">
+        <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
+            <div class="titles"> 
+            <p><strong>RERGISTROS POR EL MEDIO DE TRANSPORTE</strong></p>
+            </div>
+            <div id = "graphTransport" class="chart">        
+            </div>
+        </div>
+            <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
+                <div class="titles">
+                    <p><strong>REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE</strong></p>
+                </div>
+                <div id = "graphTransportTwo" class="chart">
+                </div>        
+            </div>
+     </div>
+</section>  
+<div class="modal fade" id="Ranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!--modal muestra el ranking top 10 -->
+     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <!--modal content hace una contenedor-->
+        <div class="modal-content modal-content modalContent">
+            <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+            <div class="modal-header modal-header modalHeader">
+                <h5 class="modal-title modal-title modalTitle" id="exampleModalCenterTitleC1">Ranking 10 (cifras más altas)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <div id="top10" >
+                </div>
+           </div>
+            <!--donde esta boton close,class da color al boton y forma-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>  
+<!--Despliega orden alfabético-->
+<div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!--modal-dialog modal muestra el cuadro -->
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <!--modal content hace una contenedor-->
+        <div class="modal-content modalContent">
+        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+            <div class="modal-header modalHeader">
+                <h5 class="modal-title modalTitle " id="exampleModalCenterTitleC2">Lista Alfabética</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>    
+            </div>
+            <!--modal body donde muestra orden alfabético-->
+            <div class="modal-body">
+                <select id="orderSelect" onchange= "order()">
+                    <option value="1">Ordenar A-Z</option>
+                    <option value="2">Ordenar Z-A</option>
+                </select>
+                <div id="orderList" >
+                </div>
+            </div>
+            <!--donde esta boton close,class da color al boton y forma-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Despliega media-->
+<div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!--modal-dialog modal muestra el cuadro -->
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <!--modal content hace una contenedor-->
+        <div class="modal-content modalContent">
+        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+            <div class="modal-header modalHeader">
+                <h5 class="modal-title modalTitle" id="exampleModalCenterTitleC3">Cálculo de la Media</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="MediaDiv" class="chart">
+                </div>
+            </div>
+            <!--Boton cerrar de modal cálculo media-->
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+             </div>
+        </div>
+    </div>
+</div>  
+<section class="base"></section>
+<footer class="page-footer"> 
+    <aside class="social-sharing">
+         <ul class="menu-social">
+            <li class="social-item"><a href="https://twitter.com/iniciarsesion?lang=es" target="_blank"><span class="screen-reader-text">Twitter</span></a></li>
+            <li class="social-item"><a href="https://es-la.facebook.com/" target="_blank"><span class="screen-reader-text">Facebook</span></a></li>
+            <li class="social-item"><a href="https://www.pinterest.com" target="_blank"><span class="screen-reader-text">Pinterest</span></a></li>
+            <li class="social-item"><a href="whatsapp://send?text=https://www.whatsapp.com/" data-action="share/whatsapp/share"><span class="screen-reader-text">Whatsapp</span></a></li>
+            <li class="social-item newsletter small "><span>Copyright © 2018 Lorena De La Riva y Marcela Arratia - Todos los derechos reservados</span></li>        
+            <li class="social-item labo"><span> <img src="imagenes/labo.png" alt="Laboratoria"> </span></li>
+        </ul>
+    </aside>
+</footer>
+    </div>
+<script src="./data/injuries/injuries.js"></script> 
+<script src="data.js"></script>
+<script src="main.js"></script> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+ //   google.charts.setOnLoadCallback(graphTransport);
+</script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</body>
+</html>

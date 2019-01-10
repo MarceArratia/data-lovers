@@ -1,29 +1,26 @@
-
-
-//window.example = example;
+/*global INJURIES*/ 
+/*global google*/ 
 //Creando función para seleccionar año desde la base de datos
 function fillListYear() {
   //constante que trae la información de la base de datos
   const data = INJURIES;
  //arreglo de años 
   let resultYear = [];
-  resultYear = fillListYearBussines(data);
+  resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
   for (let i = 0; i < resultYear.length; i++) {
     //porque +=
     document.getElementById("listYear").innerHTML += "<option value='"+resultYear[i]+"'>"+resultYear[i]+"</option>"; 
   }
 }
-
 //filtrado de datos , cambiar a data el filter(es un ciclo iterativos, que recorre el arreglo del objeto)
-function filterDataYear(){
-                                           
+function filterDataYear(){ //eslint-disable-line                                      
   //año que usuario selecciona
     let selectYear=document.getElementById("listYear").value;
     const data =INJURIES;
     //información filtrada por año
     let resultDataYear=[];
-    resultDataYear=filterListYearBussines(data,selectYear);
+    resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
     //funciones
     //dibuja gráfico filtrado por año
     graphTransport(resultDataYear);
@@ -38,7 +35,7 @@ function filterDataYear(){
 //1er gráfico filtro por Medio de Transporte
 function graphTransport(resultDataYear){
   let recibeArrayGraphic = [];
-  recibeArrayGraphic=constructGraphicOne(resultDataYear);
+  recibeArrayGraphic=constructGraphicOne(resultDataYear);//eslint-disable-line
   //Gráfico 1 de google chart
   var data=google.visualization.arrayToDataTable(
     [
@@ -57,12 +54,10 @@ function graphTransport(resultDataYear){
     var chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
   chart.draw(data, options);
 }
-
 //2do gráfico registro filtrando
 function graphTransportTwo(resultDataYear){
 let recibeArrayGraphicTwo = [];
-recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);
-
+recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
   //Gráfico 2 de google chart
   var dataDos=google.visualization.arrayToDataTable(
     [
@@ -80,9 +75,9 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);
     chart.draw(dataDos, options);
 }
 //ranking por mayor a menor por año
-function ranking (resultDataYear){ 
-  let varRanking = [,];
-  varRanking = arrayRanking(); 
+function ranking (resultDataYear){ //eslint-disable-line
+  let varRanking = [];
+  varRanking = arrayRanking(); //eslint-disable-line
 //Mostrando Ranking de accidentes por año
 document.getElementById("top10").innerHTML = "";
 let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
@@ -116,11 +111,9 @@ function half(){
     let varArray;
     //JSON.stringify convierte la posición del objeto en un String separado por ","
     varArray=JSON.stringify(data[i]);
-   // console.log(varArray);
     //se almacena string cortado por ","
     let position = [];
     position = varArray.split(",");
-    //console.log(position);
     //divide array en posiciones
     let anio=position[48].slice(8,12);
     for (let u=0;u<=position.length;u++){
@@ -133,32 +126,27 @@ function half(){
         count += 1;
       }
     }
-      // llenamos la primera posicion del arreglo con la suma y el conteo
+    // llenamos la primera posicion del arreglo con la suma y el conteo
       arrayHalf.push(anio+":"+sumHalf+":"+count);
       sumHalf=0;
       count=0;
   }
   let ArrayResultHalf = [];
-  ArrayResultHalf= halfByDecade(arrayHalf);
+  ArrayResultHalf= halfByDecade(arrayHalf);//eslint-disable-line
   graphTransportDecade(ArrayResultHalf);
-
-  
-  //document.getElementById("MediaDiv").innerHTML=ArrayResultHalf;
 }
 
 function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
-  dataYear = orderBy(orderSelect);
-  let ul="";
-  ul+="<ul class='list-group'>"
+  dataYear = orderBy(orderSelect);//eslint-disable-line
+  let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
-    ul+="<li class='list-group-item disabled'>- "+dataYear[i]+"</li>"
- 
+    table+="   <tr> <th scope='row'>"+i+"</th> <td>"+dataYear[i]+"</td></tr>"
   }
-  ul+="</ul>";
-  document.getElementById("orderList").innerHTML += ul;
+  table+="  </tbody> </table>"
+  document.getElementById("orderList").innerHTML += table;
   }
   function graphTransportDecade(resultDataDecade){
     //Gráfico 3 de google chart
@@ -186,6 +174,12 @@ function order (){
   }
   //activacion de link "quienes somos" del menu navegacion-inicio
 
+
+  
+  //activacion de link "quienes somos" del menu navegacion-fin
+
+  window.fillListYear=fillListYear;
+
 document.getElementById("aboutUs").addEventListener("click",()=>{
 
   document.getElementById("graphics").style.display="none";
@@ -195,13 +189,6 @@ document.getElementById("aboutUs").addEventListener("click",()=>{
   document.getElementById("prevention").style.display="block";
   
   }) 
-  
-  //activacion de link "quienes somos" del menu navegacion-fin
-
-
-
-
-
 
 
 
