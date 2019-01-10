@@ -40,7 +40,9 @@ ___
 
 * [5.3.3. SIMULACIÓN DE INTERACTIVIDAD](#5.3.3.-SIMULACIÓN-DE-INTERACTIVIDAD)
 
-* [5.3.4. PROCESO DE DISEÑO](#5.3.4.-PROCESO-DE-DISEÑO)
+* [5.3.4. TEST DE USABILIDAD](#5.3.4.-TEST-DE-USABILIDAD)
+
+* [5.3.5. PROCESO DE DISEÑO](#5.3.4.-PROCESO-DE-DISEÑO)
 
 * [5.4. IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO](#5.4.-IMPLEMENTACIÓN-DE-LA-INTERFAZ-DE-USUARIO)
 
@@ -119,14 +121,20 @@ Previamente a la elaboración del código, se efectuaron las siguientes fases:
 
 * 5.3.3. SIMULACIÓN DE INTERACTIVIDAD
 
+* 5.3.4. TESTEOS DE USABILIDAD
+
 #### 5.1. PLANIFICACIÓN DEL PROYECTO
-Se efectuó la planificación de actividades utilizando la herramienta web www.trello.com
+Se efectuó la planificación de actividades utilizando la herramienta web www.trello.com y como soporte se uso el diagrama de pizarra
 
 ![PlanificaciónTrello](imagenes/trello.jpg)
+link:
 
-link: 
+
+![Planificación](imagenes_readme/pizarra.jpg)
 
 #### 5.2. HISTORIAS DE USUARIO
+
+
 
 #### 5.3. DISEÑO DE LA INTERFAZ DE USUARIO
 
@@ -156,15 +164,38 @@ Se diseñó el prototipo con animación para simulación de interactividad, util
 
 link Marvel: https://marvelapp.com/3b8fadd
 
-##### 5.3.4. PROCESO DE DISEÑO
-Partiendo del esquema prototipo de alta fidelidad y analizando la historia de usarios, se ha procedido al desarrollo y codificación de la página, teniendo en cuenta los siguientes aspectos:
-- La impresión que debe generar la imagen del diseño, es confiabilidad y seriedad, por lo cual se eligierion colores sobrios (azul oscuro y celeste), y al mismo tiempo por tararse de información netamente numérica, se añadieron los gráficos con colores para que la imagen sea más amena y atractiva.
-- Tipografía sin Serif, para la fácil lectura. (Solamente se usó letra con Serif para resaltar y contrastar el título.)
-- Se incllulyó una caja de texto grande para el ingreso del mensaje, en razón de que el fin del uso es transmitir, en su mayoría, texto de largo o mediano contenido. 
-- Se incluyeron dos botones de limpiado de contenido ingresado, para facilitar la comodidad del usuario, tratandose de botones independientes, uno para la sección de Texto y otro para la sección del Número que indicará el desplazado el texto al cifrar.
-- Se incluye el boton de seleccionar y copiar texto en la papelera, en la sección donde se muestra el mensaje cifrado o descfirado, para mayor comodidad del usuario, pudiendo copiar en la ventana para proceder con la operación de cifrar o descifrar, o para copiar el texto en otra herramienta que el usuario prefiera (Ejemplo: Word, Correo electrónico, Messenger, Whatsapp, etc.)
-- Se ha incluido en la página de resultado la información del Número Desplazado, a fin de evitar que por un posible olvido se sufra la pérdida de información que además pudiera ser extensa.
+##### 5.3.4. TESTEOS DE USABILIDAD
+Sa han efectuado las entrevistas con usuarios objetivo representativos, en diferentes fases para la mejora del diseño. A continuación se presentan las tarjetas con la información obtenida, en una primera parte con las necesidades manifestadas y en una segunda parte con las observaciones realizadas a partir del prototipo de alta fidelidad y simulación de interactividad.
 
+**USUARIO 1: CARABINEROS: REPRESENTANTE DEL AREA DE ACCIDENTES DE TRANSPORTE**
+
+![Usuario1](imagenes_readme/usuario1.jpg)
+
+**USUARIO 2: REPRESENTANTE DE LAS ASEGURADORAS**
+
+![Usuario2](imagenes_readme/usuario2.jpg)
+
+**USUARIO 3: BOMBREROS: REPRESENTANTE DEL AREA DE PREVENCIÓN DE ACCIDENTES**
+
+![Usuario3](imagenes_readme/usuario3.jpg)
+
+**USUARIO 4: ESPECIALISTA UX**
+
+![Usuario4](imagenes_readme/usuario4.jpg)
+
+**USUARIO 5: USUARIO GENERAL**
+
+![Usuario5](imagenes_readme/usuario5.jpg)
+
+
+##### 5.3.5. PROCESO DE DISEÑO
+Partiendo del esquema prototipo de alta fidelidad y analizando la historia de usarios, se ha procedido al desarrollo y codificación de la página, teniendo en cuenta los siguientes aspectos:
+* La impresión que debe generar la imagen del diseño, es confiabilidad y seriedad, por lo cual se eligierion colores sobrios (azul oscuro y celeste), y al mismo tiempo por tararse de información netamente numérica, se añadieron los gráficos con colores para que la imagen sea más amena y atractiva.
+* Tipografía Serif, para resaltar los títulos. Tipografía sin Serif, para el contenido general de la página, a fin de permitir una fácil lectura.
+* Se incluyeron listas desplegables para contener todas las opciones de selección, considerando se tiene información extensa.
+* Se cuenta con la barra de navegación superior, para el fácil acceso a las secciones de la página, como a vínculos externos de interés.
+* La visualización de los gráficos ha sido colocada al centro de la página, para que sea de rápida visualización.
+* Se cuentan con reportes de informacion, mediante el acceso de botones, los cuales son cargados en ventanas tipo modal.
 
 #### 5.4. IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO
 
@@ -275,10 +306,10 @@ ____________________
 ### 6. AUTORÍA
 
 * Marcela Arratia <br>
-* Lorena De La Riva <br>
+* Lorena De La Riva Lens<br>
 
 ESTUDIANTES LABORATORIA, 7ma. Generación.<br>
-Santiago de Chile<br>
+Santiago de Chile, enero de 2019.<br>
 ![Logo de Laboratoria](imagenes_readme/logo.png)
 
 
