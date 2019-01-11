@@ -339,13 +339,14 @@ nav li ul{
     padding: 8px 12px;
     max-width: 85px; 
     min-width: 85px;
-    z-index: 4;
+    z-index: 4; 
     position: absolute;
 }
 
 nav li:hover > ul{
     display: block;
-}
+    }
+     /* menu navegacion fin*/ 
 /* menu navegacion fin*/
     
     /***************************queries***************************/
@@ -354,6 +355,17 @@ nav li:hover > ul{
     .iconNav{display:none;
     }
     }   
+   /* .chart{
+        width: 100%;
+        min-height: auto;  
+
+    }*/
+    h2{
+        align-content: center;
+    }
+    /*.row{
+        margin: 0!important;
+    }*/
     
    
  

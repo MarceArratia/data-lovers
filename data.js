@@ -7,9 +7,9 @@ function fillListYearBussines(data) {
   for (let i = 0 ; i<data.length ; i++) {
       arrayYear.push(data[i].Year.slice(0,4));
  
-  } 
-  return arrayYear;
-}
+  }  
+  return arrayYear; 
+} 
 //Función de filtrado por año
 function filterListYearBussines(data,YearA) {
   let resultDataYear=[];
@@ -277,16 +277,13 @@ function arrayRanking(){
   });
   //generando para guardar la información traducida
   let dataYear=[];
-  //convirtiendo los datos de JSON en String
+  //convirtiendo los datos de JSON en String separado por coma
 dataYear = JSON.stringify(resulYearRanking);
   //cortando elementos por coma
 dataYear = dataYear.split(",");
   //invocando la función que traduce
   dataYear = traslateReplace(dataYear);
-
-//ordenando la información por orden alfabético
-dataYear.sort();
-//creando let para separar cifras de mayor a menor como arreglos bidimensional
+//creando let para separar cifras de mayor a menor 
 let varRanking=[];
 for (let i = 0;i<=dataYear.length;i++){ 
   let replaceNull=[];
@@ -298,12 +295,13 @@ if (replaceNull[1] == "null"){
 }
 varRanking.push(replaceNull);
 }
-//ordenando de mayor a menor las cifras
+//creando funcion para ordenando de mayor a menor según la posicion del arreglo
 varRanking.sort(function(a,b){
   return b[1] - a[1];
 });
-return varRanking;
+return varRanking;//retorna arreglo ordenado
 }
+//funcion para ordenar alfabéticamente
 function orderBy(selectOrder){
       let data= INJURIES;
   //creando enlase 
@@ -328,7 +326,7 @@ function orderBy(selectOrder){
   clean[0]= String(clean[0]).replace('Year'," ");
   if(clean[0] != "Year") 
   {
-      //console.log(clean[0])   
+    //push para agregar un elemento al arreglo, clean para limpiar los caracteres 
       orderClean.push(clean[0]);
   }
   }
@@ -340,6 +338,7 @@ function orderBy(selectOrder){
   }
   return orderClean;
 }
+//instancia para los test
 window.orderBy=orderBy;
 window.arrayRanking=arrayRanking;
 window.traslateReplace=traslateReplace;
