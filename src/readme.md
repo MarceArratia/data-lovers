@@ -168,7 +168,24 @@ Partiendo del esquema prototipo de alta fidelidad y analizando la historia de us
 
 #### 5.4. IMPLEMENTACIÓN DE LA INTERFAZ DE USUARIO
 
+Funcionalidad (JS)
+Se eliminaron algunos botones basado en los test de usabilidad.
+No se llegó al ideal de prototipo de alta fidelidad debido al poco tiempo para realizar el proyecto,
+dejando la mediana y la moda de lado.
+Se implementaron funciones y arreglos para poder hacer uso de la base de datos y obtener la funcionalidad de la interfaz.
+
 ##### 5.4.1. PRUEBAS UNITARIAS - TESTING
+ 
+ Al correr la primeras pruebas se hizo en forma global y de forma unitaria,y no funcionó ningún test. Tuvimos problemas con la Data INJURIES arrojando errores de lectura de funciones no definidas, así como también errores por bootstrap. Luego optimazamos el código instalando Chai e agregando exclusiones de eslint, luego de eso paso los test sin problemas, reconociendo la data y exclyendo bootstrap.
+ Posterior a eso las pruebas unitarias comprueban que exista:
+-Una función ordenar
+-Una función filtrar
+-Una funcion Calcular
+-Chequear que función retorne un dato
+Dejando los test sin errores unitarios.
+
+
+
 
 ##### 5.4.2. HACKER EDITION
 Se han añadido cuadros de gráficos, usando Google Chart.
