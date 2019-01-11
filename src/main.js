@@ -180,10 +180,11 @@ function order (){
 
 
   
-  //activacion de link "quienes somos" del menu navegacion-fin
+ 
 
   window.fillListYear=fillListYear;
 
+//activacion de link "quienes somos" del menu navegacion-inicio
 document.getElementById("aboutUs").addEventListener("click",()=>{
 
   document.getElementById("graphics").style.display="none";
@@ -193,9 +194,20 @@ document.getElementById("aboutUs").addEventListener("click",()=>{
   document.getElementById("prevention").style.display="block";
   
   }) 
+ //activacion de link "quienes somos" del menu navegacion-fin
 
 
+ //activacion de link "contáctenos" del menu navegacion-inicio
+document.getElementById("contactUs").addEventListener("click",()=>{
 
+  document.getElementById("graphics").style.display="none";
+  
+  document.getElementById("headsBack").style.display="none";
+  
+  document.getElementById("contact").style.display="block";
+  
+  }) 
+ //activacion de link "contáctenos" del menu navegacion-fin
 
 
 
