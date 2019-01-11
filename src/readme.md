@@ -54,7 +54,7 @@ ___
 
 * [5.5. GUÍA TUTORIAL RÁPIDA DE LA PÁGINA](#5.5.-GUÍA-TUTORIAL-RÁPIDA-DE-LA-PÁGINA)
 
-6. [6. AUTORÍA](#6.-AUTORÍA)
+6. [AUTORÍA](#6.-AUTORÍA)
 
 _____________________________
 <br>
