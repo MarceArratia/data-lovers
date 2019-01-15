@@ -2,6 +2,18 @@
 /*global INJURIES*/ 
 //(declara INJURIES como variable global, según eslint)
 //para trabajarlo en el negocio
+function readJson(){
+  //fetch lee un archivo JSON, texto, imágenes.otros
+  let returnData=
+     fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
+      .then(res => res.json())//promesa en res, implementa el JSON
+      .then(data => {//promesa si se cumple escribe contenido de JSON
+         return returnData=JSON.stringify(data)
+      });
+      console.log(returnData);
+      return returnData;
+  } 
+
 function fillListYearBussines(data) {
   let arrayYear = [];
   for (let i = 0 ; i<data.length ; i++) {
