@@ -31,6 +31,9 @@ function filterDataYear(){ //eslint-disable-line
     half();
     //para ordenar
     order();
+    prueba();//invoco función que lee JSON de archivo
+    let getObject = JSON.parse(localStorage.getItem('storeObj'));//getItem trae objeto de vuelta, parse vuelve a convertir a JSON, y lo almacena en la variable let getObject
+    console.log(getObject);
 }
 //1er gráfico filtro por Medio de Transporte
 function graphTransport(resultDataYear){
