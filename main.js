@@ -74,8 +74,7 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     ]);
     let options = {
       title: '',
-      width:507,
-      height:200,
+      responsive: true;
       pieHole: 1,
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
@@ -143,7 +142,7 @@ function half(){
   graphTransportDecade(ArrayResultHalf);
 }
 
-function order (){
+function order (){  
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
   dataYear = orderBy(orderSelect);//eslint-disable-line
@@ -169,8 +168,6 @@ function order (){
       ]);
       let options = {
         title : 'Cálculo de Media cada diez años',       
-        width: 650,
-        height: 400,
         vAxis: {title: 'Décadas'},
         hAxis: {title: 'Media de Accidentes (Por Décadas)'},
         seriesType: 'bars',

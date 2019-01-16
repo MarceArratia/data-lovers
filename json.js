@@ -32,4 +32,4 @@ function FillJson(jsonObj)
      let objJson=JSON.parse(jsonObj);//convierte el objeto en JSON
      localStorage.setItem('storeObj', JSON.stringify(objJson));//localStorage variable que queda de forma local(navegador)(nombre,objeto)
     //console.log(objJson);
-}
+}    
