@@ -3,8 +3,13 @@
 //Creando función para seleccionar año desde la base de datos
 function fillListYear() {
   //constante que trae la información de la base de datos
+  //let data = readJson();
+
   const data = INJURIES;
- //arreglo de años  
+readJson();
+  //let dataJson = readJson();
+//let data=JSON.parse(dataJson);
+  //arreglo de años  
   let resultYear = [];
   resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
@@ -31,9 +36,6 @@ function filterDataYear(){ //eslint-disable-line
     half();
     //para ordenar
     order();
-    prueba();//invoco función que lee JSON de archivo
-    let getObject = JSON.parse(localStorage.getItem('storeObj'));//getItem trae objeto de vuelta, parse vuelve a convertir a JSON, y lo almacena en la variable let getObject
-    console.log(getObject);
 }
 //1er gráfico filtro por Medio de Transporte
 function graphTransport(resultDataYear){
