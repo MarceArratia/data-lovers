@@ -6,7 +6,7 @@ function fillListYear() {
   //let data = readJson();
 
   const data = INJURIES;
-
+readJson();
   //let dataJson = readJson();
 //let data=JSON.parse(dataJson);
   //arreglo de años  

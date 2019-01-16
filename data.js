@@ -6,14 +6,15 @@ function readJson(){
   //fetch lee un archivo JSON, texto, imágenes.otros
   let returnData=
      fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
-      .then(res => res.json())//promesa en res, implementa el JSON
+      .then(res => res.json() )//promesa en res, implementa el JSON
       .then(data => {//promesa si se cumple escribe contenido de JSON
-         return returnData=JSON.stringify(data)
+         return data
       });
-      console.log(returnData);
-      return returnData;
+      returnData.then(data => 
+        console.log(data)
+      );
   } 
-
+  
 function fillListYearBussines(data) {
   let arrayYear = [];
   for (let i = 0 ; i<data.length ; i++) {
