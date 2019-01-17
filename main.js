@@ -73,9 +73,9 @@ function graphTransport(resultDataYear){
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
   chart.draw(data, options);
-  $(window).resize(function(){
-    graphTransport();
+
 }
+
 //2do gráfico registro filtrando
 function graphTransportTwo(resultDataYear){
 let recibeArrayGraphicTwo = [];
@@ -96,8 +96,7 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
     chart.draw(dataDos, options);
-    $(window).resize(function(){
-      graphTransportTwo();
+  
 }
 //ranking por mayor a menor por año
 function ranking (resultDataYear,dataJson){ //eslint-disable-line
