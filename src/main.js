@@ -158,7 +158,7 @@ let data = dataJson;
   graphTransportDecade(ArrayResultHalf);
 }
 
-function order (dataJson){
+function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
   dataYear = orderBy(orderSelect);//eslint-disable-line

@@ -273,14 +273,14 @@ ul.menu-social li a[href*="whatsapp://send"]::before {
     height: 50px;
     margin-bottom: 0%; 
     z-index: 1;
-    position: fixed;
+   /* position: fixed;*/
 }
 
 footer{
     bottom: 0;
     right: 0;
     margin-bottom: 0%;
-    position: absolute;
+   /* position: absolute;*/
     left: 0;
     bottom: 0;
     width: 100%;
