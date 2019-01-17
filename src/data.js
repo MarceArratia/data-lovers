@@ -1,5 +1,4 @@
 //llenar lista por año
-/*global INJURIES*/ 
 //(declara INJURIES como variable global, según eslint)
 //para trabajarlo en el negocio
 function readJson(){
@@ -24,8 +23,9 @@ function fillListYearBussines(data) {
   return arrayYear; 
 } 
 //Función de filtrado por año
-function filterListYearBussines(data,YearA) {
+function filterListYearBussines(dataJson,YearA) {
   let resultDataYear=[];
+  let data=dataJson;
   resultDataYear=data.filter(function(fil){
       return (fil.Year.slice(0,4)===YearA);
   });
@@ -276,24 +276,28 @@ dataYear[47] = dataYear[47].replace("Total_Injured_Persons_Water_Vessel_Related"
 return dataYear;
 }
 //arreglo para el ranking 
-function arrayRanking(){  
+function arrayRanking(dataJson){  
   //rescatando data  
-  let data= INJURIES;
+  let data=dataJson;
   //lo que el usuario ingreso cuando escoge año
   let selectYear=document.getElementById("listYear").value;
   //información del año seleccionado
   let resulYearRanking = [];
-  //filtrando el año
+  //data= JSON.stringify(data);
+  //filtrando el año  
+
   resulYearRanking = data.filter(function(x){
   //return retorna la información del año seleccionado
   return(x.Year.slice(0,4) == selectYear);
   });
   //generando para guardar la información traducida
   let dataYear=[];
+//console.log(resulYearRanking);
   //convirtiendo los datos de JSON en String separado por coma
 dataYear = JSON.stringify(resulYearRanking);
   //cortando elementos por coma
 dataYear = dataYear.split(",");
+
   //invocando la función que traduce
   dataYear = traslateReplace(dataYear);
 //creando let para separar cifras de mayor a menor 
@@ -315,8 +319,8 @@ varRanking.sort(function(a,b){
 return varRanking;//retorna arreglo ordenado
 }
 //funcion para ordenar alfabéticamente
-function orderBy(selectOrder){
-      let data= INJURIES;
+function orderBy(selectOrder,dataJson){
+      let data=dataJson;
   //creando enlase 
   let selectYear=document.getElementById("listYear").value;    
   let año = [];
