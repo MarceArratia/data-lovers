@@ -5,15 +5,15 @@
 function readJson(){
   //fetch lee un archivo JSON, texto, imágenes.otros
   let returnData=
-     fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
+     fetch('./data/injuries/injuries.json')//fetch dice donde está el archivo
       .then(res => res.json() )//promesa en res, implementa el JSON
-      .then(data => {//promesa si se cumple escribe contenido de JSON
-         return data
+      .then(data => { //promesa si se cumple escribe contenido de JSON
+        return data
       });
       returnData.then(data => 
         console.log(data)
       );
-  } 
+     } 
   
 function fillListYearBussines(data) {
   let arrayYear = [];

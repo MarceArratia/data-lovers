@@ -76,7 +76,6 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     ]);
     let options = {
       title: '',
-      responsive: true;
       pieHole: 1,
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
