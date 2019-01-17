@@ -34,7 +34,7 @@ function filterDataYear(){ //eslint-disable-line
   //año que usuario selecciona
     let selectYear=document.getElementById("listYear").value;
     let data=dataJsonF;
-    console.log(data);
+    //console.log(data);
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
@@ -88,7 +88,7 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     ]);
     let options = {
       title: '',
-      responsive: true;
+      responsive: true,
       pieHole: 1,
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
@@ -198,7 +198,7 @@ function order (dataJson){
  
 
   window.fillListYear=fillListYear;
-
+/*
 //activacion de link "quienes somos" del menu navegacion-inicio
 document.getElementById("aboutUs").addEventListener("click",()=>{
 
@@ -225,7 +225,7 @@ document.getElementById("contactUs").addEventListener("click",()=>{
  //activacion de link "contáctenos" del menu navegacion-fin
 
 
-
+*/
 
 
 
