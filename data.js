@@ -78,6 +78,7 @@ function halfByDecade(arrayHalf){
   ArrayResultHalf[3]=decadeSumD/decadeCountD;
   ArrayResultHalf[4]=decadeSumE/decadeCountE;
   ArrayResultHalf[5]=decadeSumF/decadeCountF;
+
   //se envía return para mostrar en main
   return ArrayResultHalf;
 }
@@ -148,7 +149,6 @@ for(let i=0;i<=resultDataYear.length;i++){
 }
 //creando arreglo para retornar los datos del gráfico 1
 let arrayFillGraphicOne = [];
-console.log(sumAir,sumTrain,sumWather,sumRail,sumUrban,sumOther);
 arrayFillGraphicOne[0] = sumAir;
 arrayFillGraphicOne[1] = sumTrain;
 arrayFillGraphicOne[2] = sumWather;
@@ -307,8 +307,8 @@ varRanking.sort(function(a,b){
 return varRanking;//retorna arreglo ordenado
 }
 //funcion para ordenar alfabéticamente
-function orderBy(selectOrder,dataJson){
-      let data=dataJson;
+function orderBy(selectOrder){
+  let data=dataJsonF;
   //creando enlase 
   let selectYear=document.getElementById("listYear").value;    
   let año = [];

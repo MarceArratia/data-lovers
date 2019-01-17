@@ -1,6 +1,6 @@
-/*global INJURIES*/ 
+
 /*global google*/ 
-function readJson(){
+function readJson(){//eslint-disable-line
   //fetch lee un archivo JSON, texto, imágenes.otros
   let returnData=[];
      fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
@@ -143,7 +143,7 @@ let data = dataJson;
       let positionTwo = [];
       positionTwo = String(position[u]).split(":");
       //parseInt pregunta si es entero suma, si no, no hace nada
-      if (parseInt(positionTwo[1])){          
+      if (parseInt(positionTwo[1])){         
         sumHalf += parseInt(positionTwo[1]);
         count += 1;
       }
@@ -161,7 +161,7 @@ let data = dataJson;
 function order (dataJson){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
-  dataYear = orderBy(orderSelect,dataJson);//eslint-disable-line
+  dataYear = orderBy(orderSelect);//eslint-disable-line
   let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
