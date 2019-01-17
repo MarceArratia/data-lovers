@@ -148,6 +148,7 @@ for(let i=0;i<=resultDataYear.length;i++){
 }
 //creando arreglo para retornar los datos del gráfico 1
 let arrayFillGraphicOne = [];
+console.log(sumAir,sumTrain,sumWather,sumRail,sumUrban,sumOther);
 arrayFillGraphicOne[0] = sumAir;
 arrayFillGraphicOne[1] = sumTrain;
 arrayFillGraphicOne[2] = sumWather;
@@ -280,8 +281,7 @@ function arrayRanking(dataJson){
   });
   //generando para guardar la información traducida
   let dataYear=[];
-
-  //convirtiendo los datos de JSON en String separado por coma
+//convirtiendo los datos de JSON en String separado por coma
 dataYear = JSON.stringify(resulYearRanking);
   //cortando elementos por coma
 dataYear = dataYear.split(",");
