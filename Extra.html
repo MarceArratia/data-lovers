@@ -13,22 +13,16 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <title>DataLovers</title>
 </head>
-
-
-<body> 
-  <header>
-    <nav class="navbar navbar-expand-md ">   
-                <li class="nav-item active">
+<body onload="readJson()">
+    <nav class="navbar navbar-expand-lg ">      
+        <li class="nav-item active">
             <a class="nav-link text-white" href="#"><h2>REGTRANS</h2><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png" alt="EEUU"></a><span class="sr-only">(current)</span>
         </li>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>  
-
-      <div class="collapse navbar-collapse btn btn-primary" id="navbarNav">
-        
-           <ul class="navbar-nav">
-          
+      <div class="collapse navbar-collapse btn btn-primary" id="navbarNav">   
+        <ul class="navbar-nav"> </ul>
         <ul class="navbar-nav">
            <li class="nav-item active">
             <a class="nav-link text-white" href="#">Inicio <span class="sr-only">(current)</span></a>
@@ -48,46 +42,145 @@
         </ul>
       </div>
     </nav>
-  <header>
-    <section class="container-fluid">
-     
-      <div class="row" id="graphics">
-          <div  class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
-              <div class="titles"> 
-              <p><strong>RERGISTROS POR EL MEDIO DE TRANSPORTE</strong></p>
-              </div>
-              <div id="graphTransport" class="chartGraph">        
-              </div>
+    <div class="container">
+    <div class="row">
+            <div class="col-6">
+                    <a>Año de Siniestro </a>
+                <select  id="listYear"   onchange="filterDataYear()">
+                    <option value="sel">Seleccione</option>
+                </select>  
+            </div>
+            <div class="col-6">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#Ranking">RANKING</button>
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#order">LISTA ALFABÉTICA</button>
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#MediaPop">CÁLCULO "MEDIA"</button>
+            </div>
           </div>
-              <div class="col-10 col-sm-10 col-md-5 col-lg-5 col-xl-5.5 graphic">
-                  <div class="titles">
-                      <p><strong>REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE</strong></p>
-                  </div>
-                  <div id="graphTransportTwo" class="chartGraph"><!--Imprimo gráfico  -->
-                  </div>        
-              </div>
-       </div>
-      </section>
-<footer class="page-footer font-small"> 
-  <div class="row bg-success">    
-      <aside class="social-sharing">
+        </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">
+                    RERGISTROS POR EL MEDIO DE TRANSPORTE
+            </div>
+            <div class="card-body">
+              <div id="graphTransport" class="chart">        
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+                <div class="card-header">
+                        REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE
+                </div>
+            <div class="card-body">
+              <div id="graphTransportTwo" class="chart">        
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="Ranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--modal muestra el ranking top 10 -->
+                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <!--modal content hace una contenedor-->
+                    <div class="modal-content modal-content modalContent">
+                        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header modal-header modalHeader">
+                            <h5 class="modal-title modal-title modalTitle" id="exampleModalCenterTitleC1">Ranking 10 (cifras más altas)</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="top10" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            </div>
+                       </div>
+                        <!--donde esta boton close,class da color al boton y forma-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!--Despliega orden alfabético-->
+            <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--modal-dialog modal muestra el cuadro -->
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <!--modal content hace una contenedor-->
+                    <div class="modal-content modalContent">
+                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header modalHeader">
+                            <h5 class="modal-title modalTitle " id="exampleModalCenterTitleC2">Lista Alfabética</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>    
+                        </div>
+                        <!--modal body donde muestra orden alfabético-->
+                        <div class="modal-body">
+                            <select id="orderSelect" onchange= "order()">
+                                <option value="1">Ordenar A-Z</option>
+                                <option value="2">Ordenar Z-A</option>
+                            </select>
+                            <div id="orderList" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            </div>
+                        </div>
+                        <!--donde esta boton close,class da color al boton y forma-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Despliega media-->
+            <div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!--modal-dialog modal muestra el cuadro -->
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <!--modal content hace una contenedor-->
+                    <div class="modal-content modalContent">
+                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
+                        <div class="modal-header modalHeader">
+                            <h5 class="modal-title modalTitle" id="exampleModalCenterTitleC3">Cálculo de la Media</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> 
+                        <div class="modal-body">
+                            <div id="MediaDiv" >
+                            </div>
+                        </div>
+                        <!--Boton cerrar de modal cálculo media-->
+                        <div class="modal-footer">
+                             <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
+                         </div>
+                    </div>
+                </div>
+            </div>  
+<footer class="page-footer"> 
+    <aside class="social-sharing">
          <ul class="menu-social">
             <li class="social-item newsletter small "><span>Copyright © 2019 Marcela Arratia - Todos los derechos reservados</span></li>        
             <li class="social-item labo"><span> <img src="imagenes/labo.png" alt="Laboratoria"> </span></li>
         </ul>
     </aside>
-  </div>
 </footer>
-  <script src="./data/injuries/injuries.js"></script> 
-<script src="data.js"></script>
+<script src="./data/injuries/injuries.js"></script> 
 <script src="main.js"></script> 
-<script src="json.js"></script> 
+<script src="data.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
  google.charts.load('current', {'packages':['corechart']});
+ $(window).resize(function(){
+  graphTransport();
+  });
+  $(window).resize(function(){
+    graphTransportTwo();
+    });
 </script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </body>

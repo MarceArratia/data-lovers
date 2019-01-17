@@ -308,7 +308,7 @@ return varRanking;//retorna arreglo ordenado
 }
 //funcion para ordenar alfabéticamente
 function orderBy(selectOrder){
-  let data=dataJsonF;
+  let data=dataJsonF;//eslint-disable-line
   //creando enlase 
   let selectYear=document.getElementById("listYear").value;    
   let año = [];
