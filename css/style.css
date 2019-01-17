@@ -10,7 +10,7 @@ body{
     height: 100%;
 }
 
-html,body{
+html{
     margin: 0%;    
     height:100%;    
 }
@@ -36,7 +36,7 @@ html,body{
 }
 
 header{
-    height: 120px;
+    height: 20px;
     width: 100%;
     box-sizing: border-box;
     background-image: url(../imagenes/cabecera.png);
@@ -275,21 +275,6 @@ ul.menu-social li a[href*="whatsapp://send"]::before {
     z-index: 1;
    /* position: fixed;*/
 }
-
-footer{
-    bottom: 0;
-    right: 0;
-    margin-bottom: 0%;
-   /* position: absolute;*/
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    box-sizing: border-box;
-}
-/* fin pie de pagina*/
-
-
 /* menu navegacion-inicio*/ 
 nav{
     background: none;
