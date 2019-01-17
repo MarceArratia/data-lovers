@@ -34,7 +34,7 @@ function filterDataYear(){ //eslint-disable-line
   //año que usuario selecciona
     let selectYear=document.getElementById("listYear").value;
     let data=dataJsonF;
-    console.log(data);
+    
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
