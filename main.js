@@ -20,7 +20,7 @@ function fillListYear(dataJson) {
   dataJsonF=dataJson;
   //let dataJson = readJson();
 //let data=JSON.parse(dataJson);
-  //arreglo de años  
+ //arreglo de años  
   let resultYear = [];
   resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
@@ -35,6 +35,7 @@ function filterDataYear(){ //eslint-disable-line
     let selectYear=document.getElementById("listYear").value;
     let data=dataJsonF;
     //console.log(data);
+    
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
@@ -147,7 +148,7 @@ let data = dataJson;
         count += 1;
       }
     }
-    // llenamos la primera posicion del arreglo con la suma y el conteo
+    // llenamos la primera posición del arreglo con la suma y el conteo
       arrayHalf.push(anio+":"+sumHalf+":"+count);
       sumHalf=0;
       count=0;
