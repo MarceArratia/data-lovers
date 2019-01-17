@@ -359,4 +359,12 @@ nav li:hover > ul{
         width: 100%;
     }*/
    
+    .headStart{
+        height:30px;
+        margin-bottom:50px;
+        border-bottom: #CCC dotted 2px;
+        width: 900px;
+        float:left;
+
  
+    }
