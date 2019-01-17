@@ -112,7 +112,7 @@ header{
 }  
 
 .graphics{
-    height: 17rem;
+   
     font-family: 'Source Sans Pro', sans-serif; 
     color: #1e3261;
 }
@@ -121,7 +121,6 @@ header{
     margin: auto;
     font-family: 'Source Sans Pro', sans-serif; 
     background-color: #a1bfd2;
-    height: 17rem;
     top:10px;   
     bottom: 0;
     border: 1px solid #1e3261;

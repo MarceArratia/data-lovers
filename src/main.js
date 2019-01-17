@@ -91,7 +91,6 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     ]);
     let options = {
       title: '',
-      responsive: true,
       pieHole: 1,
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
@@ -186,7 +185,9 @@ function order (){
         ['2010-2016',resultDataDecade[5]],
       ]);
       let options = {
-        title : 'Cálculo de Media cada diez años',       
+        title : 'Cálculo de Media cada diez años',  
+        width:700,
+        height:500,     
         vAxis: {title: 'Décadas'},
         hAxis: {title: 'Media de Accidentes (Por Décadas)'},
         seriesType: 'bars',
