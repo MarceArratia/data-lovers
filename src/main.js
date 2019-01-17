@@ -1,10 +1,26 @@
 /*global INJURIES*/ 
 /*global google*/ 
+function readJson(){
+  //fetch lee un archivo JSON, texto, imágenes.otros
+  let returnData=[];
+     fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
+      .then(res => res.json() )//promesa en res, implementa el JSON
+      .then(data => {//promesa si se cumple escribe contenido de JSON
+        fillListYear(data);
+      });
+      //console.log(JSON.parse(returnData));
+      return returnData;    
+  } 
 //Creando función para seleccionar año desde la base de datos
-function fillListYear() {
+let dataJsonF;
+function fillListYear(dataJson) {
   //constante que trae la información de la base de datos
-  const data = INJURIES;
- //arreglo de años  
+  //let data = readJson();
+  const data = dataJson;
+  dataJsonF=dataJson;
+  //let dataJson = readJson();
+//let data=JSON.parse(dataJson);
+  //arreglo de años  
   let resultYear = [];
   resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
@@ -17,7 +33,8 @@ function fillListYear() {
 function filterDataYear(){ //eslint-disable-line                                      
   //año que usuario selecciona
     let selectYear=document.getElementById("listYear").value;
-    const data =INJURIES;
+    let data=dataJsonF;
+    console.log(data);
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
@@ -26,14 +43,11 @@ function filterDataYear(){ //eslint-disable-line
     graphTransport(resultDataYear);
     graphTransportTwo(resultDataYear);
     //creando top 10 anual
-    ranking(resultDataYear);
+    ranking(resultDataYear,data);
     //calculando media
-    half();
+    half(data);
     //para ordenar
-    order();
-    prueba();//invoco función que lee JSON de archivo
-    let getObject = JSON.parse(localStorage.getItem('storeObj'));//getItem trae objeto de vuelta, parse vuelve a convertir a JSON, y lo almacena en la variable let getObject
-    console.log(getObject);
+    order(data);
 }
 //1er gráfico filtro por Medio de Transporte
 function graphTransport(resultDataYear){
@@ -74,17 +88,17 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     ]);
     let options = {
       title: '',
-      width:507,
-      height:200,
+      responsive: true;
       pieHole: 1,
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
     chart.draw(dataDos, options);
 }
 //ranking por mayor a menor por año
-function ranking (resultDataYear){ //eslint-disable-line
+function ranking (resultDataYear,dataJson){ //eslint-disable-line
   let varRanking = [];
-  varRanking = arrayRanking(); //eslint-disable-line
+
+  varRanking = arrayRanking(dataJson); //eslint-disable-line
 //Mostrando Ranking de accidentes por año
 document.getElementById("top10").innerHTML = "";
 let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
@@ -104,9 +118,9 @@ table+="  </tbody> </table>"
 document.getElementById("top10").innerHTML += table;
 }
 //función para calcular la media
-function half(){
+function half(dataJson){
   //rescatar data 
-  let data = INJURIES;
+let data = dataJson;
   let arrayHalf=[];
   //suma de los totales numéricos de data
   let sumHalf = 0;
@@ -143,10 +157,10 @@ function half(){
   graphTransportDecade(ArrayResultHalf);
 }
 
-function order (){
+function order (dataJson){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
-  dataYear = orderBy(orderSelect);//eslint-disable-line
+  dataYear = orderBy(orderSelect,dataJson);//eslint-disable-line
   let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
@@ -169,8 +183,6 @@ function order (){
       ]);
       let options = {
         title : 'Cálculo de Media cada diez años',       
-        width: 650,
-        height: 400,
         vAxis: {title: 'Décadas'},
         hAxis: {title: 'Media de Accidentes (Por Décadas)'},
         seriesType: 'bars',
