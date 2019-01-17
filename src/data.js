@@ -1,7 +1,6 @@
 //llenar lista por año
 //(declara INJURIES como variable global, según eslint)
 //para trabajarlo en el negocio
-
   
 function fillListYearBussines(data) {
   let arrayYear = [];
