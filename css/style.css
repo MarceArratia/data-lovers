@@ -365,6 +365,11 @@ nav li:hover > ul{
         border-bottom: #CCC dotted 2px;
         width: 900px;
         float:left;
-
- 
     }
+    .chart {
+        width: 100%; 
+        min-height: 450px;
+      }
+      .row {
+        margin:0 !important;
+      }
