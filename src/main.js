@@ -35,7 +35,6 @@ function filterDataYear(){ //eslint-disable-line
     let selectYear=document.getElementById("listYear").value;
     let data=dataJsonF;
     //console.log(data);
-    
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
@@ -183,16 +182,11 @@ function order (){
         ['2010-2016',resultDataDecade[5]],
       ]);
       let options = {
-        title : 'Cálculo de Media cada diez años',  
-        width:700,
-        height:500,     
-        vAxis: {title: 'Décadas'},
-        hAxis: {title: 'Media de Accidentes (Por Décadas)'},
-        seriesType: 'bars',
-        series: {5: {type: 'line'}} 
+        title: '',
+        pieHole: 1,
       };
-      let chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
-    chart.draw(data, options);
+      let chart = new google.visualization.PieChart(document.getElementById('MediaDiv'));
+      chart.draw(data, options);
   }
   //activacion de link "quienes somos" del menu navegacion-inicio
 
