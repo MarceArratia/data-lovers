@@ -169,6 +169,7 @@ function order (){
   table+="  </tbody> </table>"
   document.getElementById("orderList").innerHTML += table;
   }
+  
   function graphTransportDecade(resultDataDecade){
     //Gráfico 3 de google chart
     let data=google.visualization.arrayToDataTable(

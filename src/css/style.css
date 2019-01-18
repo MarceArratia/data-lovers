@@ -7,7 +7,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(1);
-    background-color: rgba(109, 116, 151, 0.575);
+    background-color: rgba(228, 229, 235, 0.575);
     background-blend-mode: soft-light;
     margin: 0;
     padding: 0;
@@ -95,6 +95,8 @@ select{
 }
 .table{
     color: white;
+    width: 70%;
+	height: 500px;
 }
 .tophead{
     background:rgb(68, 14, 117);
