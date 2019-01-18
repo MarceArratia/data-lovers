@@ -13,165 +13,87 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <title>DataLovers</title>
 </head>
+
 <body onload="readJson()">
-   
-    <div class="container btn btn-danger">
-            <nav class="navbar navbar-expand-lg ">      
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" href="#"><h2>REGTRANS</h2><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png" alt="EEUU"></a><span class="sr-only">(current)</span>
-                    </li>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>  
-                  <div class="collapse navbar-collapse btn btn-primary" id="navbarNav">   
-                    <ul class="navbar-nav"> </ul>
-                    <ul class="navbar-nav">
-                       <li class="nav-item active">
-                        <a class="nav-link text-white" href="#">Inicio <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link text-white " href="#">Quiénes somos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contáctenos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled text-white" href="#" >Prevensión</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link disabled text-white" href="#" >Sitios de interés</a>
-                        </li>
-                    </ul>
-                  </div>
-                </nav>
+        <div class="container px-lg-5 titulo">
+                <div class="row mx-lg-n5">
+                  <div class="col py-3 px-lg-5"><h2>REGTRANS</h2><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png" alt="EEUU"></div>
+                  <div class="col py-3 px-lg-5"> <a>Año de Siniestro </a>
+                    <select class="select"  id="listYear"   onchange="filterDataYear()">
+                        <option value="sel">Seleccione</option>
+                    </select></div>
+                </div>
+              </div>
+            <p></p>
         <div class="row">
-            <div class="col-6">
-                    <a>Año de Siniestro </a>
-                <select  id="listYear"   onchange="filterDataYear()">
-                    <option value="sel">Seleccione</option>
-                </select>  
-            </div>
-            <div class="col-6">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Ranking">RANKING</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order">LISTA ALFABÉTICA</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MediaPop">CÁLCULO "MEDIA"</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <p></p>
+                <div class="col-3">
+                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Graficos</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ranking</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lista Ordenada</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Cálculo de Media</a>
+                  </div>
                 </div>
-                <div class="col-6">
-                </div>
-            </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-header">
-                    RERGISTROS POR EL MEDIO DE TRANSPORTE
-            </div>
-            <div class="card-body">
-              <div id="graphTransport">        
-            </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-                <div class="card-header">
-                        REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE
-                </div>
-            <div class="card-body">
-              <div id="graphTransportTwo">        
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="Ranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <!--modal muestra el ranking top 10 -->
-                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <!--modal content hace una contenedor-->
-                    <div class="modal-content modal-content modalContent">
-                        <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
-                        <div class="modal-header modal-header modalHeader">
-                            <h5 class="modal-title modal-title modalTitle" id="exampleModalCenterTitleC1">Ranking 10 (cifras más altas)</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="top10" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            </div>
-                       </div>
-                        <!--donde esta boton close,class da color al boton y forma-->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
-                        </div>
+                <div class="col-9">
+                  <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="row">
+                                    <div class="col-sm-5">
+                                      <div class="card">
+                                        <div class="card-header">
+                                            RERGISTROS POR EL MEDIO DE TRANSPORTE
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="graphTransport">        
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                      <div class="card">
+                                            <div class="card-header">
+                                                    REGISTROS POR DEPENDENCIA DE MEDIO DE TRANSPORTE
+                                            </div>
+                                        <div class="card-body">
+                                          <div id="graphTransportTwo">        
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                     </div>
-                </div>
-            </div>  
-            <!--Despliega orden alfabético-->
-            <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <!--modal-dialog modal muestra el cuadro -->
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <!--modal content hace una contenedor-->
-                    <div class="modal-content modalContent">
-                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
-                        <div class="modal-header modalHeader">
-                            <h5 class="modal-title modalTitle " id="exampleModalCenterTitleC2">Lista Alfabética</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>    
-                        </div>
-                        <!--modal body donde muestra orden alfabético-->
-                        <div class="modal-body">
-                            <select id="orderSelect" onchange= "order()">
-                                <option value="1">Ordenar A-Z</option>
-                                <option value="2">Ordenar Z-A</option>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div id="top10">
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <select class="select" id="orderSelect" onchange= "order()">
+                                    <option value="1">Ordenar A-Z</option>
+                                    <option value="2">Ordenar Z-A</option>
                             </select>
-                            <div id="orderList" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <p></p>
+                            <div id="orderList">
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <div class="col-sm-6">    
+                            <div class="card">
+                                    <h5 class="card-header">Cálculo Media</h5>
+                                    <div class="card-body">
+                                            <div id="MediaDiv" >
+                                            </div>
+                                    </div>
                             </div>
                         </div>
-                        <!--donde esta boton close,class da color al boton y forma-->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
-                        </div>
                     </div>
-                </div>
+                  </div>
             </div>
-            <!--Despliega media-->
-            <div class="modal fade" id="MediaPop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <!--modal-dialog modal muestra el cuadro -->
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <!--modal content hace una contenedor-->
-                    <div class="modal-content modalContent">
-                    <!--titulo del modal, class close pone una X,data-dismiss cierra el cuadro,aria es letra-->
-                        <div class="modal-header modalHeader">
-                            <h5 class="modal-title modalTitle" id="exampleModalCenterTitleC3">Cálculo de la Media</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div> 
-                        <div class="modal-body">
-                            <div id="MediaDiv" >
-                            </div>
-                        </div>
-                        <!--Boton cerrar de modal cálculo media-->
-                        <div class="modal-footer">
-                             <button type="button" class="btn btn-danger modalButton" data-dismiss="modal">Cerrar</button>
-                         </div>
-                    </div>
-                </div>
-            </div>  
-<footer class="page-footer"> 
+        </div>
+<footer class="page-footer titulo"> 
     <aside class="social-sharing">
          <ul class="menu-social">
-            <li class="social-item newsletter small "><span>Copyright © 2019 Marcela Arratia - Todos los derechos reservados</span></li>        
-            <li class="social-item labo"><span> <img src="imagenes/labo.png" alt="Laboratoria"> </span></li>
+            <li class="social-item newsletter small titulo"><span>Copyright © 2019 Marcela Arratia - Todos los derechos reservados</span></li>        
+            <li class="social-item labo titulo"><span> <img src="imagenes/labo.png" alt="Laboratoria"> </span></li>
         </ul>
     </aside>
 </footer>

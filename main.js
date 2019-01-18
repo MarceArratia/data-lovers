@@ -183,14 +183,11 @@ function order (){
         ['2010-2016',resultDataDecade[5]],
       ]);
       let options = {
-        title : 'Cálculo de Media cada diez años',       
-        vAxis: {title: 'Décadas'},
-        hAxis: {title: 'Media de Accidentes (Por Décadas)'},
-        seriesType: 'bars',
-        series: {5: {type: 'line'}} 
+        title: '',
+        pieHole: 1,
       };
-      let chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
-    chart.draw(data, options);
+      let chart = new google.visualization.PieChart(document.getElementById('MediaDiv'));
+      chart.draw(data, options);
   }
   //activacion de link "quienes somos" del menu navegacion-inicio
 
