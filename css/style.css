@@ -1,5 +1,19 @@
 
 /* pie de pagina - inicio */
+body{
+    background-image: url("/src/transporte.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1);
+    background-color: rgba(109, 116, 151, 0.575);
+    background-blend-mode: soft-light;
+    margin: 0;
+    padding: 0;
+    filter: blur(1);  
+}
+
 .social-sharing {
     display: block;
     position: fixed;
@@ -56,27 +70,13 @@
     height: 50px;
     margin-bottom: 0%; 
     z-index: 1;
-   /* position: fixed;*/
 }
-/* menu navegacion-inicio*/ 
-
-    
-
-    
-
-     /* menu navegacion fin*/ 
-/* menu navegacion fin*/
-    
-    /***************************queries***************************/
+ 
     @media only screen 
     and (min-width : 767px) {
     .iconNav{display:none;
     }
-    }   
-    /*.chartGraph{
-        width: 100%;
-    }*/
-   
+}
     .headStart{
         height:30px;
         margin-bottom:50px;
@@ -86,10 +86,19 @@
     }
 
 .titulo{
-    background-color: #8631D8;
+    background-color: rgb(68, 14, 117);
     color:white;
 }
 select{
     background-color: #F1ED5D;
  
+}
+.table{
+    color: white;
+}
+.tophead{
+    background:rgb(68, 14, 117);
+}
+.top{
+    background: rgb(177, 174, 182)
 }

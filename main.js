@@ -101,7 +101,7 @@ function ranking (resultDataYear,dataJson){ //eslint-disable-line
   varRanking = arrayRanking(dataJson); //eslint-disable-line
 //Mostrando Ranking de accidentes por año
 document.getElementById("top10").innerHTML = "";
-let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
+let table = "<table class='table' id='tablet'><thead class='tophead' id='tophead'> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody class='top' id='top'>"
 for (let i = 0;i<=10;i++){
   if (varRanking[0,i]!="undefined" && varRanking[i][1]>0){
     varRanking[0,i]= String(varRanking[0,i]).replace("[","");
@@ -114,7 +114,7 @@ for (let i = 0;i<=10;i++){
   }
 }
 //tabla de ranking
-table+="  </tbody> </table>"
+table+="  </tbody > </table> "
 document.getElementById("top10").innerHTML += table;
 }
 //función para calcular la media
@@ -161,7 +161,7 @@ function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
   dataYear = orderBy(orderSelect);//eslint-disable-line
-  let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
+  let table = "<table class='table' id='tablet'> <thead thead class='tophead' id='tophead'>> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody class='top' id='top'>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
     table+="   <tr> <th scope='row'>"+i+"</th> <td>"+dataYear[i]+"</td></tr>"
