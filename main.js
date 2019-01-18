@@ -67,10 +67,8 @@ function graphTransport(resultDataYear){
     ]);
     let options = {
       title: '',
-      width:507,
-      height:200,
-      pieHole: 0.4,
-    };
+      pieHole: 1,
+    }
     let chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
   chart.draw(data, options);
 
