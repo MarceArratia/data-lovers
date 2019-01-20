@@ -1,18 +1,6 @@
 //llenar lista por año
 //(declara INJURIES como variable global, según eslint)
 //para trabajarlo en el negocio
-function readJson(){
-  //fetch lee un archivo JSON, texto, imágenes.otros
-  let returnData=
-     fetch('./data/injuries/injuries.json')//fetch dice donde está el archivo
-      .then(res => res.json() )//promesa en res, implementa el JSON
-      .then(data => { //promesa si se cumple escribe contenido de JSON
-        return data
-      });
-      returnData.then(data => 
-        console.log(data)
-      );
-     } 
   
 function fillListYearBussines(data) {
   let arrayYear = [];
@@ -90,6 +78,7 @@ function halfByDecade(arrayHalf){
   ArrayResultHalf[3]=decadeSumD/decadeCountD;
   ArrayResultHalf[4]=decadeSumE/decadeCountE;
   ArrayResultHalf[5]=decadeSumF/decadeCountF;
+
   //se envía return para mostrar en main
   return ArrayResultHalf;
 }
@@ -236,7 +225,7 @@ dataYear[7] = dataYear[7].replace("Total_Injured_Persons_General_Aviation","Avia
 dataYear[8] = dataYear[8].replace("Total_Injured_Persons_Hazardous_Liquid_Pipeline","Tubería de líquidos peligrosos - Personas accidentadas");
 dataYear[9] = dataYear[9].replace("Total_Injured_Persons_Highway","Autopista - Personas accidentadas");
 dataYear[10] = dataYear[10].replace("Total_Injured_Persons_Highway_Rail_Grade_Crossing","Cruce de grado de Ferrocarril de Carretera - Personas accidentadas");
-dataYear[11] = dataYear[11].replace("Total_Injured_Persons_Highway_Rail_Grade_Crossing_Railroads","Rieles de cruce de Ferrocarril de Carretea - Personas accidentadas");
+dataYear[11] = dataYear[11].replace("Total_Injured_Persons_Highway_Rail_Grade_Crossing_Railroads","Rieles de cruce de Ferrocarril de Carretera - Personas accidentadas");
 dataYear[12] = dataYear[12].replace("Total_Injured_Persons_Industrial_Or_Other","Industrial u otro - Personas accidentadas");
 dataYear[13] = dataYear[13].replace("Total_Injured_Persons_Motorcyclists","Motociclistas accidentados");
 dataYear[14] = dataYear[14].replace("Total_Injured_Persons_On_Demand_Air_Taxi","Taxi aéreo bajo demanda - Personas accidentadas");
@@ -250,7 +239,6 @@ dataYear[21] = dataYear[21].replace("Total_Injured_Persons_Passenger_Or_Occupant
 dataYear[22] = dataYear[22].replace("Total_Injured_Persons_Passenger_Vessel","Buque de pasajeros - Personas accidentadas");
 dataYear[23] = dataYear[23].replace("Total_Injured_Persons_Pedalcyclist","Ciclistas - Personas accidentada");
 dataYear[24] = dataYear[24].replace("Total_Injured_Persons_Pedestrians","Peatones accidentados");
-dataYear[25] = dataYear[25].replace("Total_Injured_Persons_Pipeline","Tubería - Personas accidentados");
 dataYear[26] = dataYear[26].replace("Total_Injured_Persons_Rail","Rieles - Personas accidentados");
 dataYear[27] = dataYear[27].replace("Total_Injured_Persons_Rail_Freight","Transporte Ferroviario de mercancías - Personas accidentadas");
 dataYear[28] = dataYear[28].replace("Total_Injured_Persons_Rail_Freight_Highway_Rail_Grade_Crossing","Carreteras de ferrocarril - Personas accidentadas");
@@ -292,6 +280,7 @@ function arrayRanking(dataJson){
   });
   //generando para guardar la información traducida
   let dataYear=[];
+
 //console.log(resulYearRanking);
   //convirtiendo los datos de JSON en String separado por coma
 dataYear = JSON.stringify(resulYearRanking);
@@ -319,8 +308,8 @@ varRanking.sort(function(a,b){
 return varRanking;//retorna arreglo ordenado
 }
 //funcion para ordenar alfabéticamente
-function orderBy(selectOrder,dataJson){
-      let data=dataJson;
+function orderBy(selectOrder){
+  let data=dataJsonF;//eslint-disable-line999
   //creando enlase 
   let selectYear=document.getElementById("listYear").value;    
   let año = [];

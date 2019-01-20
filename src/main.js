@@ -1,6 +1,6 @@
-/*global INJURIES*/ 
+
 /*global google*/ 
-function readJson(){
+function readJson(){//eslint-disable-line
   //fetch lee un archivo JSON, texto, imágenes.otros
   let returnData=[];
      fetch('data/injuries/injuries.json')//fetch dice donde está el archivo
@@ -20,7 +20,7 @@ function fillListYear(dataJson) {
   dataJsonF=dataJson;
   //let dataJson = readJson();
 //let data=JSON.parse(dataJson);
-  //arreglo de años  
+ //arreglo de años  
   let resultYear = [];
   resultYear = fillListYearBussines(data);//eslint-disable-line
   //for para agregar años y mostrarlos en html
@@ -34,7 +34,7 @@ function filterDataYear(){ //eslint-disable-line
   //año que usuario selecciona
     let selectYear=document.getElementById("listYear").value;
     let data=dataJsonF;
-    console.log(data);
+    //console.log(data);
     //información filtrada por año
     let resultDataYear=[];
     resultDataYear=filterListYearBussines(data,selectYear);//eslint-disable-line
@@ -66,13 +66,13 @@ function graphTransport(resultDataYear){
     ]);
     let options = {
       title: '',
-      width:507,
-      height:200,
-      pieHole: 0.4,
-    };
+      pieHole: 1,
+    }
     let chart = new google.visualization.PieChart(document.getElementById('graphTransport'));
   chart.draw(data, options);
+
 }
+
 //2do gráfico registro filtrando
 function graphTransportTwo(resultDataYear){
 let recibeArrayGraphicTwo = [];
@@ -92,6 +92,7 @@ recibeArrayGraphicTwo=constructGraphicTwo(resultDataYear);//eslint-disable-line
     };
     let chart = new google.visualization.PieChart(document.getElementById('graphTransportTwo'));
     chart.draw(dataDos, options);
+  
 }
 //ranking por mayor a menor por año
 function ranking (resultDataYear,dataJson){ //eslint-disable-line
@@ -100,7 +101,7 @@ function ranking (resultDataYear,dataJson){ //eslint-disable-line
   varRanking = arrayRanking(dataJson); //eslint-disable-line
 //Mostrando Ranking de accidentes por año
 document.getElementById("top10").innerHTML = "";
-let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody>"
+let table = "<table class='table' id='tablet'><thead class='tophead' id='tophead'> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th> <th scope='col'>Total</th> </tr> </thead> <tbody class='top' id='top'>"
 for (let i = 0;i<=10;i++){
   if (varRanking[0,i]!="undefined" && varRanking[i][1]>0){
     varRanking[0,i]= String(varRanking[0,i]).replace("[","");
@@ -113,7 +114,7 @@ for (let i = 0;i<=10;i++){
   }
 }
 //tabla de ranking
-table+="  </tbody> </table>"
+table+="  </tbody > </table> "
 document.getElementById("top10").innerHTML += table;
 }
 //función para calcular la media
@@ -141,12 +142,12 @@ let data = dataJson;
       let positionTwo = [];
       positionTwo = String(position[u]).split(":");
       //parseInt pregunta si es entero suma, si no, no hace nada
-      if (parseInt(positionTwo[1])){          
+      if (parseInt(positionTwo[1])){         
         sumHalf += parseInt(positionTwo[1]);
         count += 1;
       }
     }
-    // llenamos la primera posicion del arreglo con la suma y el conteo
+    // llenamos la primera posición del arreglo con la suma y el conteo
       arrayHalf.push(anio+":"+sumHalf+":"+count);
       sumHalf=0;
       count=0;
@@ -156,11 +157,11 @@ let data = dataJson;
   graphTransportDecade(ArrayResultHalf);
 }
 
-function order (dataJson){
+function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
-  dataYear = orderBy(orderSelect,dataJson);//eslint-disable-line
-  let table = "<table class='table' id='tablet'> <thead> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody>"
+  dataYear = orderBy(orderSelect);//eslint-disable-line
+  let table = "<table class='table' id='tablet'> <thead thead class='tophead' id='tophead'>> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody class='top' id='top'>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
     table+="   <tr> <th scope='row'>"+i+"</th> <td>"+dataYear[i]+"</td></tr>"
@@ -168,6 +169,7 @@ function order (dataJson){
   table+="  </tbody> </table>"
   document.getElementById("orderList").innerHTML += table;
   }
+  
   function graphTransportDecade(resultDataDecade){
     //Gráfico 3 de google chart
     let data=google.visualization.arrayToDataTable(
@@ -181,14 +183,11 @@ function order (dataJson){
         ['2010-2016',resultDataDecade[5]],
       ]);
       let options = {
-        title : 'Cálculo de Media cada diez años',       
-        vAxis: {title: 'Décadas'},
-        hAxis: {title: 'Media de Accidentes (Por Décadas)'},
-        seriesType: 'bars',
-        series: {5: {type: 'line'}} 
+        title: '',
+        pieHole: 1,
       };
-      let chart = new google.visualization.ComboChart(document.getElementById('MediaDiv'));
-    chart.draw(data, options);
+      let chart = new google.visualization.PieChart(document.getElementById('MediaDiv'));
+      chart.draw(data, options);
   }
   //activacion de link "quienes somos" del menu navegacion-inicio
 
@@ -197,7 +196,7 @@ function order (dataJson){
  
 
   window.fillListYear=fillListYear;
-
+/*
 //activacion de link "quienes somos" del menu navegacion-inicio
 document.getElementById("aboutUs").addEventListener("click",()=>{
 
@@ -224,7 +223,7 @@ document.getElementById("contactUs").addEventListener("click",()=>{
  //activacion de link "contáctenos" del menu navegacion-fin
 
 
-
+*/
 
 
 
