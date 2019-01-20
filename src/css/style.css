@@ -1,7 +1,6 @@
 
 /* pie de pagina - inicio */
 body{
-    background-image: url("/src/transporte.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -84,10 +83,10 @@ body{
         width: 900px;
         float:left;
     }
-
 .titulo{
     background-color: rgb(68, 14, 117);
     color:white;
+
 }
 select{
     background-color: #F1ED5D;
@@ -102,5 +101,22 @@ select{
     background:rgb(68, 14, 117);
 }
 .top{
-    background: rgb(177, 174, 182)
+    background: #C39BD3
+}
+.cardText{
+    font-size: 9px;
+}
+.letra{
+    font-size: 1em;
+    color: white;
+}
+.icono{
+    font-size: 1em;
+}
+.nav-pills .nav-link.active,
+.show>.nav-pills .nav-link{
+    background: rgb(68, 14, 117)!important
+}
+.nav-link{
+    color: rgb(68, 14, 117);
 }
