@@ -161,7 +161,7 @@ function order (){
   let dataYear = [];
   let orderSelect = document.getElementById("orderSelect").value;
   dataYear = orderBy(orderSelect);//eslint-disable-line
-  let table = "<table class='table' id='tablet'> <thead thead class='tophead' id='tophead'>> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody class='top' id='top'>"
+  let table = "<table class='table' id='tablet'> <thead thead class='tophead' id='tophead'> <tr> <th scope='col'>#</th> <th scope='col'>Tipo de accidente</th></tr> </thead> <tbody class='top' id='top'>"
   document.getElementById("orderList").innerHTML = "";
   for (let i=0;i<dataYear.length;i++){
     table+="   <tr> <th scope='row'>"+i+"</th> <td>"+dataYear[i]+"</td></tr>"
