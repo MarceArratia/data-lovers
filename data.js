@@ -280,7 +280,9 @@ function arrayRanking(dataJson){
   });
   //generando para guardar la información traducida
   let dataYear=[];
-//convirtiendo los datos de JSON en String separado por coma
+
+//console.log(resulYearRanking);
+  //convirtiendo los datos de JSON en String separado por coma
 dataYear = JSON.stringify(resulYearRanking);
   //cortando elementos por coma
 dataYear = dataYear.split(",");
